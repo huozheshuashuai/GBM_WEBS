@@ -1,0 +1,6 @@
+=== Pseudotime (slingshot) on malignant cells ===
+
+Cells with pseudotime: 7952 / 7952 
+GAM WEBS ~ s(pseudotime): p = 0  dev.expl = 0.169 
+Spearman WEBS vs pseudotime: rho = 0.301  p = 2.7e-166 
+(Paper: pseudotime connects LLS to LHS; expect positive correlation)

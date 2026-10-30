@@ -1,0 +1,19 @@
+=== Spatial autocorrelation of WEBS across Visium slices ===
+
+                    slice n_spots     moran_I moran_p_analytic
+Moran I statistic    GBM1    4764 0.011939584     7.208443e-02
+Moran I statistic1   GBM2    2891 0.001307841     4.383169e-01
+Moran I statistic2   GBM3    1775 0.222089996     3.671371e-61
+Moran I statistic3   GBM4    2540 0.053034921     1.207323e-06
+Moran I statistic4 GBM5_1    2203 0.006559473     2.820149e-01
+Moran I statistic5 GBM5_2    2171 0.200116089     2.854879e-60
+                   moran_p_permutation   geary_c      geary_p
+Moran I statistic          0.087912088 0.9859552 4.755014e-02
+Moran I statistic1         0.440559441 0.9962674 3.651621e-01
+Moran I statistic2         0.000999001 0.7767698 5.732895e-60
+Moran I statistic3         0.000999001 0.9452093 1.056433e-06
+Moran I statistic4         0.309690310 0.9906931 2.283534e-01
+Moran I statistic5         0.000999001 0.8025734 5.441254e-57
+
+Interpretation: Moran's I > 0 with permutation p < 0.05 indicates
+significant spatial clustering of WEBS beyond random distribution.

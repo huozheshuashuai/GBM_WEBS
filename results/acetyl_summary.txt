@@ -1,0 +1,23 @@
+=== Site-level acetylation: spliceosome mechanism test ===
+
+Total sites tested: 8350 | spliceosome sites: 102 
+Significantly up-acetylated in LHS (FDR<0.05): 786 
+  of which spliceosome: 43 
+Fisher enrichment OR: 7.36  p: 1.32e-18 
+
+Spliceosome sites positively correlating with WEBS (FDR<0.05): 52 / 88 
+Median site-WEBS rho (spliceosome): 0.563 
+
+Acetylation-abundance coupling (spliceosome proteins, median rho): 0.624 
+Top coupled proteins:
+               gene acetyl_protein_coupling
+PRPF40B     PRPF40B               0.8666667
+HNRNPA2B1 HNRNPA2B1               0.8547899
+PRPF8         PRPF8               0.8369606
+DDX39B       DDX39B               0.8260744
+HNRNPA1     HNRNPA1               0.8038896
+SRSF11       SRSF11               0.8008065
+HNRNPM       HNRNPM               0.7826651
+SNRNP200   SNRNP200               0.7611326
+PRPF38B     PRPF38B               0.7564103
+SNU13         SNU13               0.7379112

@@ -1,0 +1,7 @@
+=== Spliceosome specificity control ===
+
+Spliceosome:  protein rho = 0.79 | mRNA rho = -0.03 | discordance = 0.82
+Random sets:  discordance mean = -0.20 (range -0.64 to 0.45)
+Proteasome:   protein rho = 0.27 | mRNA rho = -0.50 | discordance = 0.77
+
+Empirical p (spliceosome discordance >= random): 0.010

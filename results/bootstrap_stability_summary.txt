@@ -1,0 +1,35 @@
+=== Bootstrap stability of LASSO-Cox feature selection ===
+N bootstrap: 100 
+Reference genes: KAT2A, KAT5, KAT8, HDAC1, HDAC2, SIRT1, SIRT2, VEGFA, LDHA, LDHB, GAPDH 
+
+Selection frequency of reference genes:
+       gene selection_frequency in_reference
+HDAC1 HDAC1                1.00         TRUE
+LDHB   LDHB                0.97         TRUE
+VEGFA VEGFA                0.91         TRUE
+LDHA   LDHA                0.89         TRUE
+KAT8   KAT8                0.88         TRUE
+SIRT1 SIRT1                0.86         TRUE
+KAT2A KAT2A                0.77         TRUE
+KAT5   KAT5                0.61         TRUE
+HDAC2 HDAC2                0.57         TRUE
+GAPDH GAPDH                0.52         TRUE
+SIRT2 SIRT2                0.42         TRUE
+
+Top 15 genes overall:
+       gene selection_frequency in_reference
+HDAC1 HDAC1                1.00         TRUE
+LDHB   LDHB                0.97         TRUE
+VEGFA VEGFA                0.91         TRUE
+LDHA   LDHA                0.89         TRUE
+KAT8   KAT8                0.88         TRUE
+SIRT1 SIRT1                0.86         TRUE
+KAT2A KAT2A                0.77         TRUE
+KAT5   KAT5                0.61         TRUE
+HDAC2 HDAC2                0.57         TRUE
+GAPDH GAPDH                0.52         TRUE
+SIRT2 SIRT2                0.42         TRUE
+ENO2   ENO2                0.37        FALSE
+ITGA5 ITGA5                0.37        FALSE
+SPP1   SPP1                0.35        FALSE
+MMP2   MMP2                0.32        FALSE

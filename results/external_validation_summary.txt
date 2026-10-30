@@ -1,0 +1,20 @@
+=== GSE131928 external validation ===
+
+Smart-seq2:  7930  cells; 10x:  16201  cells
+
+-- WEBS by Neftel state (Smart-seq2): Kruskal-Wallis p = 1.57e-168 
+         AC         MES         NPC         OPC 
+-0.02357071 -0.01817954 -0.06709712 -0.11760281 
+-- WEBS by Neftel state (10x): Kruskal-Wallis p = 1.04e-313 
+         AC         MES         NPC         OPC 
+ 0.00000000  0.00000000 -0.06676279 -0.09455570 
+
+-- Patient-level WEBS: Smart-seq2 vs 10x: rho = 0.667  p = 0.219 
+
+-- Method correlation (patient-level, Spearman) --
+           WEBS AUCell MeanExpr ssGSEA  PLAGE
+WEBS      1.000  0.947    0.918  0.874 -0.969
+AUCell    0.947  1.000    0.972  0.925 -0.918
+MeanExpr  0.918  0.972    1.000  0.925 -0.947
+ssGSEA    0.874  0.925    0.925  1.000 -0.874
+PLAGE    -0.969 -0.918   -0.947 -0.874  1.000

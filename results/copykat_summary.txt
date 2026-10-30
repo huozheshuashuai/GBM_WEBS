@@ -1,0 +1,22 @@
+=== CopyKAT purity control ===
+
+Called cells: 16255 / 35823  across 18 samples
+
+aneuploid   diploid      <NA> 
+     4421     11834     19568 
+
+Aneuploid (tumor) cells: 4421 
+WEBS groups among aneuploid cells:
+
+ LLS LDTS  LHS 
+ 871 2219 1331 
+
+Concordance: aneuploid vs Neoplastic_cell annotation:
+
+Endothelial_cell          Myeloid  Neoplastic_cell  Oligodendrocyte 
+               2              661               53              141 
+            <NA> 
+            3564 
+
+WEBS group differences within aneuploid-only cells: KW p = 0 
+(Acceptance: p < 0.001 means stratification is not a normal-cell artifact)

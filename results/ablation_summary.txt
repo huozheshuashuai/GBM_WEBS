@@ -1,0 +1,18 @@
+=== Ablation: six-gene signature (TCGA-GBM, n = 144) ===
+
+Full model C-index: 0.621 
+
+         model    cindex         delta
+    HDAC1 only 0.5096990 -0.1110341353
+     MMP2 only 0.5449679 -0.0757652097
+    SIRT2 only 0.5455977 -0.0751354075
+    ITGA5 only 0.5475501 -0.0731830205
+    HIF1A only 0.5552337 -0.0654994332
+     SPP1 only 0.5859680 -0.0347650838
+   Minus HIF1A 0.5878574 -0.0328756770
+    Minus SPP1 0.5928958 -0.0278372591
+   Minus HDAC1 0.6164504 -0.0042826552
+   Minus SIRT2 0.6204812 -0.0002519209
+ Full six-gene 0.6207331  0.0000000000
+    Minus MMP2 0.6270311  0.0062980224
+   Minus ITGA5 0.6383676  0.0176344628

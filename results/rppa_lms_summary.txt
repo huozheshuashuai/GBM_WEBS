@@ -1,0 +1,15 @@
+=== RPPA500 LMS survival (TCGA-GBM) ===
+n = 71 
+
+KM (Low/Mid/High):
+  variable       pval   method  pval.txt
+1  LMS_grp 0.01607833 Log-rank p = 0.016
+
+Cox continuous LMS:
+         coef exp(coef)  se(coef)        z  Pr(>|z|)
+LMS 0.2304192  1.259128 0.2188578 1.052826 0.2924208
+
+Cox adjusted for age:
+          coef exp(coef)   se(coef)        z    Pr(>|z|)
+LMS 0.22688991  1.254692 0.22044403 1.029240 0.303366698
+age 0.04185868  1.042747 0.01292941 3.237478 0.001205911

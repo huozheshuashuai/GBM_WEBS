@@ -1,0 +1,68 @@
+=== GSE138794 scRNA-seq pipeline summary ===
+
+Total cells after QC: 35823 
+Samples: 20 
+
+Cell type distribution:
+
+           Astrocyte          Endothelial Macrophage_Microglia 
+               14691                 1037                 3699 
+           Malignant               Neuron      Oligodendrocyte 
+                1775                 6154                 7796 
+            Pericyte 
+                 671 
+
+WEBS group distribution:
+
+  LLS  LDTS   LHS 
+ 8956 17911  8956 
+
+Region type distribution:
+
+  Core-like Margin-like Normal-like 
+       1609        9514       24700 
+
+WEBS by cell type (median):
+           Astrocyte          Endothelial Macrophage_Microglia 
+         0.000000000          0.060363069          0.000000000 
+           Malignant               Neuron      Oligodendrocyte 
+         0.000000000          0.077903998          0.000000000 
+            Pericyte 
+         0.003310438 
+
+WEBS by region type (median):
+  Core-like Margin-like Normal-like 
+          0           0           0 
+
+Margin-like vs Core-like WEBS (Wilcoxon):
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  m and c2
+W = 8762337, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+Spearman WEBS vs Hallmark_Hypoxia:
+
+	Spearman's rank correlation rho
+
+data:  obj$WEBS and obj$Hallmark_Hypoxia
+S = 1.1084e+13, p-value < 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.4466812 
+
+
+Spearman WEBS vs CA9/VEGFA:
+
+	Spearman's rank correlation rho
+
+data:  obj$WEBS and obj$CA9_VEGFA
+S = 7.0386e+12, p-value < 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+0.08135056 
+

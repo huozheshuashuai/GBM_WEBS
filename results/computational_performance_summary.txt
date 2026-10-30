@@ -1,0 +1,26 @@
+Computational performance (WEBS vs alternatives)
+Machine: x86-64 | RAM: 16 GB 
+
+          n_cells   method elapsed_sec delta_mem_mb
+elapsed1     1000   AUCell        0.75        104.5
+elapsed5     5000   AUCell        3.32        514.8
+elapsed9    10000   AUCell        7.33       1029.6
+elapsed13   25000   AUCell       32.16       2573.9
+elapsed16   35823   AUCell       35.14       3688.1
+elapsed3     1000 MeanExpr        0.03          0.0
+elapsed7     5000 MeanExpr        0.33          0.1
+elapsed11   10000 MeanExpr        0.75          0.1
+elapsed14   25000 MeanExpr        1.80          0.2
+elapsed17   35823 MeanExpr        2.52          0.3
+elapsed      1000     WEBS        6.50          4.3
+elapsed4     5000     WEBS       26.04          0.7
+elapsed8    10000     WEBS       57.00          1.2
+elapsed12   25000     WEBS      249.62          2.3
+elapsed15   35823     WEBS      288.14          1.8
+elapsed2     1000   ssGSEA       12.78        207.5
+elapsed6     5000   ssGSEA       75.02       1029.2
+elapsed10   10000   ssGSEA      144.29       2058.4
+1           25000   ssGSEA          NA           NA
+11          35823   ssGSEA          NA           NA
+
+WEBS at 10,000 cells:  57  s

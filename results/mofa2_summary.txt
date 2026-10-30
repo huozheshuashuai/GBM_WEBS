@@ -1,0 +1,33 @@
+=== MOFA2 CPTAC 4-view integration ===
+
+Samples: 99 | Factors: 10
+
+Variance explained per factor (%):
+         proteome acetylome phosphoproteome rnaseq
+Factor1     25.99      8.10           17.69   5.64
+Factor2     11.11      7.37            8.22   3.91
+Factor3      5.28      9.34            2.61   0.23
+Factor4      0.13     14.92            0.09   0.08
+Factor5      3.46      0.75            3.36   2.41
+Factor6      3.45      2.22            2.83   0.95
+Factor7      2.90      0.69            2.27   1.45
+Factor8      0.88      0.61            4.29   0.40
+Factor9      2.61      0.28            1.13   1.04
+Factor10     2.07      0.72            1.53   0.73
+
+Factor-WEBS correlations (Spearman):
+   factor         rho            p            q
+1       1 -0.40216450 4.285228e-05 0.0002142614
+2       2 -0.63704391 0.000000e+00 0.0000000000
+3       3  0.04414348 6.638876e-01 0.7376528687
+4       4 -0.03038961 7.648781e-01 0.7648781324
+5       5  0.13847866 1.713751e-01 0.3427502796
+6       6 -0.12615955 2.130084e-01 0.3550139492
+7       7  0.18251082 7.065847e-02 0.2355282327
+8       8  0.07815708 4.412782e-01 0.5555000856
+9       9  0.07762523 4.444001e-01 0.5555000856
+10     10  0.14164502 1.617191e-01 0.3427502796
+
+Top WEBS-associated factor: Factor 2  (rho = -0.637 )
+Spliceosome protein loadings vs others (Wilcoxon): p = 0.123 
+Median loading spliceosome: -0.1356  vs others: 0.0515 

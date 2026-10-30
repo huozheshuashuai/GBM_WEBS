@@ -1,0 +1,26 @@
+[FAIL] AnnotationDbi
+ 
+[FAIL] GO.db
+ 
+[FAIL] Signac
+ 
+[FAIL] Slingshot
+ 
+[FAIL] SingleCellExperiment
+ 
+[FAIL] tradeSeq
+ 
+[FAIL] AUCell
+ 
+[FAIL] UCell
+ 
+[FAIL] DESeq2
+ 
+[FAIL] clusterProfiler
+ 
+[FAIL] org.Hs.eg.db
+ 
+[FAIL] enrichplot
+ 
+[FAIL] AnnotationHub
+ 

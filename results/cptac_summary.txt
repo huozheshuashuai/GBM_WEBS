@@ -1,0 +1,17 @@
+=== CPTAC proteomics summary ===
+
+Samples: 99 | Proteins: 11141 
+
+-- Spliceosome enrichment (LHS vs LLS) --
+Quantified spliceosome proteins: 111 
+Up-regulated: 107  Down: 0 
+Odds ratio: Inf  p: 3.351557e-37 
+(Paper: 117/129 up, OR = 39.2, FDR = 6.9e-64)
+
+-- Spliceosome machinery vs WEBS across samples --
+Protein level: Spearman rho = 0.79  p = 0 
+mRNA level:    Spearman rho = -0.024  p = 0.811 
+(Paper: protein rho = 0.44, mRNA rho = -0.29)
+
+-- Per-gene mRNA-protein correlation (spliceosome) --
+Median rho: 0.362 

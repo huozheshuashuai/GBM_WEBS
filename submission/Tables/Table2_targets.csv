@@ -1,0 +1,6 @@
+Tier,Target,Key evidence,Tool compounds
+1,SF3B1,"107/111 spliceosome proteins up in LHS; DepMap dependency (p=0.038); docking -6.7 kcal/mol (PDB 6EN4)","H3B-8800, E7107, pladienolide B"
+1,HDAC2,"GDSC2 sensitivity vorinostat q=1.1e-4; bootstrap selection 100%; SHAP top contributor; docking -7.9 kcal/mol (PDB 4LXZ)","Vorinostat, Entinostat"
+2,MED1,"DepMap CRISPR dependency (r=-0.28, q=0.049)","(preclinical)"
+2,SIRT2,"Signature member (protective); docking AGK2 -8.5 kcal/mol (PDB 5D7P)",AGK2
+3,KAT2A/EP300,"Writer core; perturbation sensitivity","C646, MG149"

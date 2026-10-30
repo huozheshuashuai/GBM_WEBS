@@ -1,0 +1,16 @@
+# big data not for GitHub
+data/
+*.log
+results/*_stdout.log
+
+# docking intermediates
+docking/prep/
+docking/logs/
+
+# OS noise
+__MACOSX/
+.DS_Store
+*_copykat_final_results_bin_by_cell.txt
+*_copykat_raw_results_bin_by_cell.txt
+*_copykat_raw_results_gene_by_cell.txt
+results/cellchat_objects.rds

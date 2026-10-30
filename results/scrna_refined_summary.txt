@@ -1,0 +1,31 @@
+=== Refined annotation summary ===
+
+Total cells: 35823 | annotated: 11687 | malignant: 7952 
+
+WEBS by original cell type (mean +/- sd):
+     original_type     WEBS.mean       WEBS.sd
+1        Astrocyte  0.0034369874  0.0581246737
+2 Endothelial_cell -0.0001920408  0.0557305162
+3          Myeloid -0.0080601861  0.0518383553
+4  Neoplastic_cell -0.0260763782  0.0764033111
+5  Oligodendrocyte -0.0841637083  0.0598155162
+
+WEBS group distribution among malignant cells:
+
+ LLS LDTS  LHS 
+3034 4302  616 
+
+Malignant vs non-malignant WEBS (Wilcoxon):
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  mal$WEBS and obj$WEBS[!obj$is_malignant]
+W = 13767998, p-value = 1.087e-10
+alternative hypothesis: true location shift is not equal to 0
+
+
+Malignant WEBS by sample:
+    SF11612     SF11644     SF11949     SF11956     SF11964     SF11977 
+ 0.00000000 -0.06477767 -0.03959796  0.00000000 -0.10477265  0.00000000 
+    SF11979     SF12017 
+ 0.00000000 -0.05412070 

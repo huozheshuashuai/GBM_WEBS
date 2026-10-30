@@ -1,0 +1,38 @@
+=== Translational analysis summary ===
+
+Drugs tested: 286 
+WEBS-sensitizing drugs (r < -0.2, FDR < 0.1): 22 
+# A tibble: 10 × 8
+   DRUG_NAME      PUTATIVE_TARGET PATHWAY_NAME     n spearman_r       p mean_auc
+   <chr>          <chr>           <chr>        <int>      <dbl>   <dbl>    <dbl>
+ 1 Piperlongumine Induces reacti… Other          112     -0.324 5.33e-4    0.848
+ 2 CHIR-99021     GSK3A, GSK3B    WNT signali…   112     -0.304 1.17e-3    0.960
+ 3 SL0101         RSK, AURKB, PI… Other, kina…   112     -0.290 2.01e-3    0.971
+ 4 Nelarabine     <NA>            DNA replica…   452     -0.227 1.11e-6    0.974
+ 5 IOX2           EGLN1           Other          112     -0.224 1.76e-2    0.982
+ 6 Avagacestat    Amyloid beta20… Other          577     -0.224 5.70e-8    0.966
+ 7 Nutlin-3a (-)  MDM2            p53 pathway    585     -0.222 6.29e-8    0.943
+ 8 AZD5991        MCL1            Apoptosis r…   451     -0.221 2.28e-6    0.867
+ 9 THR-103        Mutant RAS      PI3K/MTOR s…   465     -0.220 1.74e-6    0.955
+10 GSK2830371A    PPM1D           Other          452     -0.216 3.60e-6    0.978
+# ℹ 1 more variable: q <dbl>
+
+Drugs targeting LHS-up proteins and WEBS-sensitizing:
+# A tibble: 15 × 4
+   DRUG_NAME  PUTATIVE_TARGET spearman_r        q
+   <chr>      <chr>                <dbl>    <dbl>
+ 1 SL0101     AURKB               -0.290 0.00605 
+ 2 Mirin      MRE11               -0.191 0.000112
+ 3 RVX-208    BRD4                -0.190 0.000112
+ 4 Veliparib  PARP1               -0.180 0.000161
+ 5 Veliparib  PARP2               -0.180 0.000161
+ 6 Entinostat HDAC1               -0.178 0.000260
+ 7 Entinostat HDAC3               -0.178 0.000260
+ 8 CDK9_5038  CDK9                -0.172 0.00118 
+ 9 Dinaciclib CDK1                -0.171 0.000422
+10 Dinaciclib CDK2                -0.171 0.000422
+11 Dinaciclib CDK9                -0.171 0.000422
+12 SGC-CBP30  EP300               -0.170 0.00138 
+13 I-BRD9     BRD9                -0.167 0.000394
+14 Niraparib  PARP1               -0.164 0.000733
+15 Niraparib  PARP2               -0.164 0.000733
