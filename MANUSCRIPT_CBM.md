@@ -189,7 +189,7 @@ The authors declare that they have no known competing financial interests or per
 
 # Data availability
 
-All datasets are publicly available: GSE138794, GSE194329, GSE131928, GSE7696 (GEO); TCGA-GBM/LUAD/BRCA/SKCM (GDC, LinkedOmics, TCPA); CGGA-693/325 (cgga.org.cn, registration required); CPTAC-GBM (LinkedOmics); DepMap 24Q2 (depmap.org); GDSC2 (Sanger cancerrxgene). Code and the WEBS implementation are available from the corresponding author upon reasonable request and will be deposited in a public repository with a permanent DOI upon acceptance.
+All datasets are publicly available: GSE138794, GSE194329, GSE131928, GSE7696 (GEO); TCGA-GBM/LUAD/BRCA/SKCM (GDC, LinkedOmics, TCPA); CGGA-693/325 (cgga.org.cn, registration required); CPTAC-GBM (LinkedOmics); DepMap 24Q2 (depmap.org); GDSC2 (Sanger cancerrxgene). Code and the WEBS implementation are available at https://github.com/huozheshuashuai/GBM_WEBS (archived at https://doi.org/10.5281/zenodo.23791323).
 
 # Acknowledgments
 
