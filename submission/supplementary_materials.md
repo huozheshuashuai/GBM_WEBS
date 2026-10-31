@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-**Manuscript**: Spliceosome activation defines an epigenetically hyperactive and therapeutically targetable malignant cell state in glioblastoma
+**Manuscript**: Post-transcriptional spliceosome accumulation defines a therapeutically targetable malignant cell state in glioblastoma
 
 This document describes all supplementary figures and tables.
 

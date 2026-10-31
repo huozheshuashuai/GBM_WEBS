@@ -1,6 +1,6 @@
 Dear Editor-in-Chief,
 
-We are pleased to submit our manuscript entitled "Spliceosome activation defines an epigenetically hyperactive and therapeutically targetable malignant cell state in glioblastoma" for consideration as a Research Article in Computers in Biology and Medicine.
+We are pleased to submit our manuscript entitled "Post-transcriptional spliceosome accumulation defines a therapeutically targetable malignant cell state in glioblastoma" for consideration as a Research Article in Computers in Biology and Medicine.
 
 This study presents a computational systems-biology framework that integrates single-cell transcriptomics (35,823 cells), spatial transcriptomics, TMT proteomics and acetylomics, pharmacogenomic screens, and molecular docking to define and validate a therapeutically targetable malignant cell state in glioblastoma. The central finding is counterintuitive and methodologically notable: spliceosome activation in the writer-dominant state is post-transcriptional — protein abundance of splicing machinery tracks the epigenetic state (ρ = 0.79) while mRNA does not (ρ = −0.03), a discordance exceeding 100 size-matched random gene sets (empirical p = 0.010). Site-level acetylome analysis nominates acetylation–ubiquitination competition as the stabilizing mechanism.
 
