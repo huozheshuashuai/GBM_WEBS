@@ -1,12 +1,12 @@
 # Figure Legends
 
-**Figure 1 | Study design and analytical workflow.** Overview of data sources (single-cell RNA-seq, spatial transcriptomics, CPTAC TMT proteomics/acetylomics, eight bulk cohorts, DepMap/GDSC2 pharmacogenomics), the WEBS computation, and the three-tier analysis (discovery, validation, therapeutic nomination). (Original figure retained from v16.)
+**Figure 1 | A computational framework for discovering a therapeutically targetable malignant cell state in glioblastoma.** Six data sources (scRNA-seq of 35,823 cells, spatial transcriptomics, snATAC-seq, eight bulk cohorts, CPTAC proteomics, DepMap/GDSC2) feed the Writer–Eraser Balance Score (WEBS), followed by a three-tier analysis (Discovery: cell-state landscape and hypoxia decoupling; Mechanism: post-transcriptional spliceosome accumulation and acetylation coupling; Translation: six-gene signature, pharmacogenomics, molecular docking). Key finding callout: protein ρ = +0.79 vs mRNA ρ = −0.03.
 
-**Figure 2 | The Writer–Eraser Balance Score (WEBS) landscape.** (A) UMAP of 35,823 cells from 20 GBM tumor samples colored by cell type. (B) WEBS projected onto the UMAP. (C) WEBS distribution by cell type. (D) IQR-based stratification into LLS (bottom 25%), LDTS (middle 50%), and LHS (top 25%).
+**Figure 2 | The Writer–Eraser Balance Score (WEBS) landscape.** (a) Cell-type annotation of 35,823 cells from 20 GBM tumor samples (marker-based with original-study labels). (b) WEBS projected onto the UMAP embedding. (c) WEBS distribution across the IQR-defined groups (LLS, bottom 25%; LDTS, middle 50%; LHS, top 25%; Kruskal–Wallis p < 10⁻³⁰⁰).
 
 **Figure 3 | Neftel states and WEBS.** (A) Neftel module scores (MES/AC/NPC/OPC) by WEBS group in 7,952 neoplastic cells. (B) WEBS vs mesenchymal module score with GAM fit. External validation in GSE131928 (Smart-seq2: Kruskal–Wallis p = 1.6 × 10⁻¹⁶⁸; 10x: p = 1.0 × 10⁻³¹³).
 
-**Figure 4 | WEBS is decoupled from canonical hypoxia.** (A) WEBS vs Hallmark Hypoxia score in malignant cells (ρ = −0.054). (B) WEBS by tumor region in malignant cells; the Margin-like association persists after hypoxia adjustment (logistic regression p = 3.8 × 10⁻⁴).
+**Figure 4 | WEBS is decoupled from canonical hypoxia markers.** (a) WEBS across invasion region types (all cells; Kruskal–Wallis p < 2.2 × 10⁻¹⁶). (b) Patient-level paired Margin vs Core WEBS (paired Wilcoxon, n = 17). (c) WEBS vs CA9 + VEGFA score (all cells, n = 35,823; within malignant cells ρ = −0.054). (d) Hallmark Hypoxia score by WEBS group; the Margin-like association persists after hypoxia adjustment (logistic regression p = 3.8 × 10⁻⁴).
 
 **Figure 5 | Pseudotime trajectory connects LLS to LHS.** Slingshot trajectory on neoplastic cells (LLS origin): UMAP colored by pseudotime (left), WEBS (center), and GAM fit of WEBS along pseudotime (right; ρ = 0.301, p = 2.7 × 10⁻¹⁶⁶).
 
