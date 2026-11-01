@@ -15,5 +15,6 @@ Thank you for your consideration.
 Sincerely,
 
 Jia Chen, PhD (on behalf of all co-authors)
-Department of Bioinformatics, Chengdu Neusoft University, Chengdu, China
-Email: 1176625889@qq.com
+Department of Bioinformatics, Chengdu Neusoft University
+No. 1 Dongruan Avenue, Chengdu, Sichuan 611844, China
+Phone: [to be added] | Email: 1176625889@qq.com
