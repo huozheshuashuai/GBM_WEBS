@@ -1,0 +1,16 @@
+Cohort,Platform,N,Usage
+GSE138794,10x scRNA-seq,"35,823 cells / 20 samples / 17 patients",Discovery single-cell + WEBS definition
+GSE194329,10x Visium,"6 GBM slices / 16,344 spots",Spatial validation
+GSE131928,Smart-seq2 + 10x,"24,131 cells / 28 patients",External scRNA validation + benchmarking
+TCGA-GBM (LinkedOmics),RNA-seq RSEM,144,Six-gene signature training + survival
+TCGA-GBM (GDC),STAR-counts TPM,371,WEBS survival (boundary test)
+CGGA-693,RNA-seq,657,Signature validation
+CGGA-325,RNA-seq,313,Signature validation
+GSE7696,Microarray,84,Survival validation
+CPTAC-GBM,TMT proteomics/acetylomics/phosphoproteomics/RNA-seq,99,Proteomic mechanism (spliceosome)
+TCGA-GBM (TCPA),RPPA500,71,Protein-level lactate metabolism survival
+DepMap 24Q2,CRISPR,102 GBM/glioma lines,Dependency (MED1/SF3B1/SRSF1)
+GDSC2,Drug screen,"286 drugs, up to 585 lines",HDAC inhibitor sensitivity + combinations
+TCGA-LUAD,RNA-seq,527,Pan-cancer scope
+TCGA-BRCA,RNA-seq,"1,087",Pan-cancer scope
+TCGA-SKCM,RNA-seq,458,Pan-cancer scope
