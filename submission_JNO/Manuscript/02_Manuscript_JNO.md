@@ -45,15 +45,15 @@ AC, astrocyte-like; AUCell, area under the curve cell scoring; CNV, copy-number 
 
 Glioblastoma (GBM) remains the most aggressive primary brain tumor in adults, with a median overall survival of approximately 15 months despite maximal resection, radiochemotherapy, and temozolomide [1,2]. Intratumoral heterogeneity spans genomic, transcriptomic, epigenetic, and metabolic layers [3,4], and therapeutic resistance emerges from this heterogeneity. Histone acylation — including acetylation and lactylation — is written by histone acetyltransferases (EP300, KAT2A, KAT2B, KAT5, KAT8, CREBBP) and erased by class I HDACs and sirtuins (HDAC1–3, SIRT1–3, SIRT6–7) [5,10–12]. The net modification state thus reflects a balance between opposing enzymatic capacities.
 
-Two parallel literatures motivate this study. First, spliceosomal dysregulation is a recognized hallmark of cancer [36], and spliceosome modulators (the SF3B1-targeting agents H3B-8800 and E7107) have shown clinical activity in hematologic malignancies [37], and recent work demonstrates SF3B1-mutant solid tumors are preferentially sensitive to spliceosome inhibition [38]; their role in solid tumors remains incompletely characterized [38,39]. Second, reports on splicing machinery and prognosis in glioma are contradictory: transcript-level measurements associate spliceosome expression weakly or even favorably with outcome, whereas proteomic studies imply the opposite. We reasoned that this contradiction might arise from a layer-specific phenomenon — post-transcriptional accumulation of splicing machinery that transcript-based assays systematically underestimate.
+Recent work has established lactylation as disease-relevant in glioma: XRCC1 lactylation confers therapeutic resistance [6], lactate-driven histone lactylation reprograms GBM immunity via CBX3 [7], glucose-driven lactylation sustains immunosuppressive macrophages [8], and lactylation-driven m6A reading promotes oncogenesis more broadly [9]; PTBP1 lactylation maintains glioma stem cells [13], and hypoxia-induced M2 polarization is lactylation-dependent [14,15]. Parallel efforts have derived lactylation-associated prognostic signatures in glioma [27–32], but these remain at the transcriptomic correlation level. Two further literatures motivate this study. First, spliceosomal dysregulation is a recognized hallmark of cancer [33], and spliceosome modulators (the SF3B1-targeting agents H3B-8800 and E7107) have shown clinical activity in hematologic malignancies [34], and recent work demonstrates SF3B1-mutant solid tumors are preferentially sensitive to spliceosome inhibition [35]; their role in solid tumors remains incompletely characterized [35,36]. Second, reports on splicing machinery and prognosis in glioma are contradictory: transcript-level measurements associate spliceosome expression weakly or even favorably with outcome, whereas proteomic studies imply the opposite. We reasoned that this contradiction might arise from a layer-specific phenomenon — post-transcriptional accumulation of splicing machinery that transcript-based assays systematically underestimate.
 
-We therefore asked three questions: (i) Does a discrete writer–eraser imbalance state exist within GBM tumors? (ii) What is its proteomic output, and can it explain the transcript–protein contradiction? (iii) Is it therapeutically actionable, and where do its predictions stop? We introduce the Writer–Eraser Balance Score (WEBS), a rank-based transcriptomic score computable on single-cell and bulk data, and subject it to multi-layer validation: single-cell and spatial transcriptomics, snATAC-seq, CPTAC TMT proteomics and acetylomics, bulk clinical cohorts, CRISPR dependency screens, pharmacogenomic screens, molecular docking, and method-level benchmarking. Negative and boundary results are reported explicitly.
+We therefore asked three questions: (i) Does a discrete writer–eraser imbalance state exist within GBM tumors? (ii) What is its proteomic output, and can it explain the transcript–protein contradiction? (iii) Is it therapeutically actionable, and where do its predictions stop? We introduce the Writer–Eraser Balance Score (WEBS), a rank-based transcriptomic score computable on single-cell and bulk data, and subject it to multi-layer validation: single-cell and spatial transcriptomics, snATAC-seq, CPTAC TMT proteomics and acetylomics, bulk clinical cohorts, CRISPR dependency screens, pharmacogenomic screens, molecular docking, and method-level benchmarking. Negative and boundary results are reported explicitly. An overview of the study design is shown in Fig. 1.
 
 # 2. Methods
 
 ## 2.1 Data sources
 
-scRNA-seq: GSE138794 (35,823 QC-passed cells, 20 samples, 17 patients). Spatial: GSE194329 (six GBM Visium slices). External scRNA: GSE131928 (Smart-seq2 and 10x). Bulk: TCGA-GBM (LinkedOmics legacy, n = 144; GDC STAR-counts, n = 371), CGGA-693, CGGA-325, GSE7696; RPPA: TCPA RPPA500 (n = 71 matched). Proteomics: CPTAC-GBM TMT proteome (11,141 proteins), acetylome (13,556 sites), phosphoproteome, and RNA-seq (n = 99). Pharmacogenomics: DepMap 24Q2 (CRISPRGeneEffect, expression, model metadata) and GDSC2 (fitted dose responses). Pan-cancer: TCGA-LUAD/BRCA/SKCM via TCGAbiolinks.
+scRNA-seq: GSE138794 (35,823 QC-passed cells, 20 samples, 17 patients). Spatial: GSE194329 (six GBM Visium slices). External scRNA: GSE131928 (Smart-seq2 and 10x). Bulk: TCGA-GBM (LinkedOmics legacy, n = 144; GDC STAR-counts, n = 371), CGGA-693, CGGA-325, GSE7696; RPPA: TCPA RPPA500 (n = 71 matched). Proteomics: CPTAC-GBM TMT proteome [24] (11,141 proteins), acetylome (13,556 sites), phosphoproteome, and RNA-seq (n = 99). Pharmacogenomics: DepMap 24Q2 [25] (CRISPRGeneEffect, expression, model metadata) and GDSC2 [26] (fitted dose responses). Pan-cancer: TCGA-LUAD/BRCA/SKCM via TCGAbiolinks. All cohorts are summarized in Table 1.
 
 ## 2.2 WEBS computation
 
@@ -61,15 +61,15 @@ Writers: EP300, KAT2A, KAT2B, KAT5, KAT8, CREBBP. Erasers: HDAC1, HDAC2, HDAC3, 
 
 ## 2.3 Single-cell analysis
 
-Seurat v5 pipeline (log-normalization, 2,000 variable features, PCA dims 1:30, UMAP, resolution 0.8). Cell identities were anchored to the original study's annotations and cross-checked by marker-based scoring. CopyKAT (per-sample, ≤1,200 cells, hg19) distinguished aneuploid tumor cells. Region types: Core (MKI67, TOP2A, PCNA), Margin (FN1, ITGA5, SPP1, MMP2), Normal (RBFOX3, MAP2, GFAP) composite max-score assignment. Hypoxia decoupling: logistic regression (Margin ~ WEBS + Hallmark Hypoxia) and partial correlation. Trajectory: Slingshot on neoplastic cells with LLS origin; GAM fit of WEBS along pseudotime. Spliced/unspliced matrices are not deposited for GSE138794, precluding RNA velocity.
+Seurat v5 pipeline [16] (log-normalization, 2,000 variable features, PCA dims 1:30, UMAP, resolution 0.8). Cell identities were anchored to the original study's annotations and cross-checked by marker-based scoring. CopyKAT (per-sample, ≤1,200 cells, hg19) distinguished aneuploid tumor cells. Region types: Core (MKI67, TOP2A, PCNA), Margin (FN1, ITGA5, SPP1, MMP2), Normal (RBFOX3, MAP2, GFAP) composite max-score assignment. Hypoxia decoupling: logistic regression (Margin ~ WEBS + Hallmark Hypoxia) and partial correlation. Trajectory: Slingshot [18] on neoplastic cells with LLS origin; GAM fit of WEBS along pseudotime. Spliced/unspliced matrices are not deposited for GSE138794, precluding RNA velocity.
 
 ## 2.4 Spatial transcriptomics
 
-SCTransform per slice; spot-level WEBS on SCT-normalized data; dual-hotspots defined at the 75th percentile of writer and metabolism scores; Moran's I and Geary's c with six-nearest-neighbor weights and 1,000 label permutations (spdep).
+SCTransform per slice; RCTD was attempted [19] but its internal caching step failed on our platform, so label-transfer-free spot-level WEBS was used; spot-level WEBS on SCT-normalized data; dual-hotspots defined at the 75th percentile of writer and metabolism scores; Moran's I and Geary's c with six-nearest-neighbor weights and 1,000 label permutations (spdep).
 
 ## 2.5 snATAC-seq
 
-Fragment files were not deposited for GSE138794; analysis was performed at peak-matrix level. Promoter accessibility was aggregated over peaks within TSS ± 2 kb of writer/eraser genes (hg19 coordinates, EnsDb.Hsapiens.v75), and per-sample mean accessibility was correlated with patient-median scRNA WEBS.
+Fragment files were not deposited for GSE138794; analysis was performed at peak-matrix level with the Signac workflow [20]. Promoter accessibility was aggregated over peaks within TSS ± 2 kb of writer/eraser genes (hg19 coordinates, EnsDb.Hsapiens.v75), and per-sample mean accessibility was correlated with patient-median scRNA WEBS.
 
 ## 2.6 Proteomics
 
@@ -81,7 +81,7 @@ Four-view integration (proteome, acetylome, phosphoproteome, RNA-seq; top 3,000 
 
 ## 2.8 Prognostic modeling
 
-LASSO-Cox (glmnet, 10-fold CV) on lactylation/hypoxia/invasion candidates was trained in TCGA-GBM and yielded the six-gene signature (HIF1A, SIRT2, MMP2, ITGA5, HDAC1, SPP1); coefficients were locked after cross-validation, and all other cohorts (CGGA-693, CGGA-325, GSE7696, IDH-wild-type GBM subsets, CPTAC) constitute strictly independent test sets with no information leakage; bootstrap (100×) selection frequencies; SHAP (kernelshap) on the Cox linear predictor; RPPA lactate-metabolism score (LDHA, LDHB, PKM2, MCT4, HIF1A, ENO1, ENO2, GAPDH antibodies).
+LASSO-Cox [21] (glmnet, 10-fold CV) on lactylation/hypoxia/invasion candidates was trained in TCGA-GBM and yielded the six-gene signature (HIF1A, SIRT2, MMP2, ITGA5, HDAC1, SPP1); coefficients were locked after cross-validation within a Cox proportional-hazards framework [22], and all other cohorts (CGGA-693, CGGA-325, GSE7696, IDH-wild-type GBM subsets, CPTAC) constitute strictly independent test sets with no information leakage; bootstrap (100×) selection frequencies; SHAP (kernelshap) on the Cox linear predictor; RPPA lactate-metabolism score (LDHA, LDHB, PKM2, MCT4, HIF1A, ENO1, ENO2, GAPDH antibodies).
 
 ## 2.9 Pharmacogenomics and molecular docking
 
@@ -115,7 +115,7 @@ Protein-level WEBS stratified 99 CPTAC-GBM tumors. Differential abundance (limma
 
 ## 3.5 Mechanistic evidence: splicing-factor acetylation couples to protein abundance
 
-Among 8,350 tested acetylation sites, 786 were hyper-acetylated in LHS, with spliceosome-protein sites strongly enriched (43/102; Fisher OR = 7.36, p = 1.3 × 10⁻¹⁸). Per-site acetylation correlated with WEBS for 52/88 spliceosome sites (FDR < 0.05; median ρ = 0.56). Per-protein acetylation predicted abundance (median ρ = 0.62; PRPF40B 0.87, HNRNPA2B1 0.85, PRPF8 0.84; Fig. 8, Fig. S8). Proteasome activity did not show the global-impairment pattern expected under reduced proteolysis, supporting site-specific acetylation-mediated stabilization.
+Among 8,350 tested acetylation sites, 786 were hyper-acetylated in LHS, with spliceosome-protein sites strongly enriched (43/102; Fisher OR = 7.36, p = 1.3 × 10⁻¹⁸). Per-site acetylation correlated with WEBS for 52/88 spliceosome sites (FDR < 0.05; median ρ = 0.56). Per-protein acetylation predicted abundance (median ρ = 0.62; PRPF40B 0.87, HNRNPA2B1 0.85, PRPF8 0.84; Fig. 8, Fig. S8). Proteasome activity did not show the global-impairment pattern expected under reduced proteolysis, supporting site-specific acetylation-mediated stabilization. Consistent with this profile, malignant-cell functional characterization (Hallmark pathway activity, CytoTRACE-like stemness, perturbation sensitivity, and differential transcription factors with OLIG2 top-ranked) is summarized in Fig. 9.
 
 ## 3.6 Cross-omics latent factors confirm a shared axis
 
@@ -131,11 +131,11 @@ The six-gene signature (HIF1A, SIRT2, MMP2, ITGA5, HDAC1, SPP1; fixed coefficien
 
 ## 3.9 Therapeutic vulnerabilities
 
-WEBS correlated with increased dependency on MED1 (r = −0.28, q = 0.049), SF3B1 (r = −0.21, p = 0.038), and SRSF1 (r = −0.21, p = 0.037) in DepMap. MLLT1/ENL was not essential in any GBM line and did not replicate (r = −0.15, p = 0.14) and was removed from the priority list (Table 2). High-WEBS lines were more sensitive to vorinostat (r = −0.16, q = 1.1 × 10⁻⁴) and entinostat (r = −0.18, q = 8.7 × 10⁻⁵) in GDSC2; 22 WEBS-sensitizing compounds were nominated (FDR < 0.1), and Bliss prediction ranked piperlongumine + CHIR-99021 highest (ρ = 0.29, q = 0.012). Docking supported engagement of vorinostat–HDAC2 (−7.9 kcal/mol), H3B-8800–SF3B1 (−6.7 kcal/mol), and AGK2–SIRT2 (−8.5 kcal/mol) (Fig. 11).
+WEBS correlated with increased dependency on MED1 (r = −0.28, q = 0.049), SF3B1 (r = −0.21, p = 0.038), and SRSF1 (r = −0.21, p = 0.037) in DepMap [25]. MLLT1/ENL was not essential in any GBM line and did not replicate (r = −0.15, p = 0.14) and was removed from the priority list (Table 2). High-WEBS lines were more sensitive to vorinostat (r = −0.16, q = 1.1 × 10⁻⁴) and entinostat (r = −0.18, q = 8.7 × 10⁻⁵) in GDSC2 [26]; 22 WEBS-sensitizing compounds were nominated (FDR < 0.1), and Bliss prediction ranked piperlongumine + CHIR-99021 highest (ρ = 0.29, q = 0.012). Docking supported engagement of vorinostat–HDAC2 (−7.9 kcal/mol), H3B-8800–SF3B1 (−6.7 kcal/mol), and AGK2–SIRT2 (−8.5 kcal/mol) (Fig. 11).
 
 ## 3.10 Cell–cell communication
 
-CellChat comparison identified SPP1–CD44 as up-regulated in the writer-dominant state, while the MIF–CD74/CXCR4 axis — both ligand and receptors — was enriched in LLS (permutation p < 10⁻⁴; Fig. 6), consistent with an immunosuppressive milieu in the low-WEBS compartment.
+CellChat [17] comparison identified SPP1–CD44 as up-regulated in the writer-dominant state, while the MIF–CD74/CXCR4 axis [23] — both ligand and receptors — was enriched in LLS (permutation p < 10⁻⁴; Fig. 6), consistent with an immunosuppressive milieu in the low-WEBS compartment.
 
 ## 3.11 Method benchmarking and computational performance
 
@@ -149,7 +149,7 @@ WEBS stratified survival in TCGA-LUAD (HR = 0.64, p = 0.039) but not in BRCA or 
 
 ## 4.1 A mechanistic model: acetylation–ubiquitination competition
 
-Our central finding reframes spliceosome activation in GBM as a post-transcriptional, proteome-level phenomenon coupled to epigenetic writer–eraser balance. Three lines of evidence support a specific mechanism: spliceosome acetylation sites are hyper-acetylated in the writer-dominant state (OR = 7.36); site acetylation tracks WEBS; and per-protein acetylation predicts abundance (median ρ = 0.62). Because histone acetyltransferases (EP300, KAT2A) possess non-histone acetyltransferase activity, and lysine acetylation competitively occludes ubiquitination at shared residues [40], we propose that writer-dominant cells acetylate splicing factors, shielding them from ubiquitin–proteasome turnover and producing whole-complex accumulation without mRNA induction.
+Our central finding reframes spliceosome activation in GBM as a post-transcriptional, proteome-level phenomenon coupled to epigenetic writer–eraser balance. Three lines of evidence support a specific mechanism: spliceosome acetylation sites are hyper-acetylated in the writer-dominant state (OR = 7.36); site acetylation tracks WEBS; and per-protein acetylation predicts abundance (median ρ = 0.62). Because histone acetyltransferases (EP300, KAT2A) possess non-histone acetyltransferase activity, and lysine acetylation competitively occludes ubiquitination at shared residues [37], we propose that writer-dominant cells acetylate splicing factors, shielding them from ubiquitin–proteasome turnover and producing whole-complex accumulation without mRNA induction (Fig. 12).
 
 ## 4.2 Reconciling the field's contradictions
 
@@ -212,29 +212,26 @@ The authors thank the data-generating consortia (TCGA, CPTAC, CGGA, GLASS, DepMa
 15. Li D, Cui G, Yang K, et al. Inhibiting macrophage-derived lactate transport restores cGAS-STING signalling and enhances antitumour immunity in glioblastoma. Nat Cell Biol. 2026;28(2):349-362.
 16. Hao Y, Hao S, Andersen-Nissen E, et al. Integrated analysis of multimodal single-cell data. Cell. 2021;184(13):3573-3587.
 17. Jin S, Guerrero-Juarez CF, Zhang L, et al. Inference and analysis of cell-cell communication using CellChat. Nat Commun. 2021;12(1):1088.
-18. Browaeys R, Saelens W, Saeys Y. NicheNet: modeling intercellular communication by linking ligands to target genes. Nat Methods. 2020;17(2):159-162.
-19. Street K, Risso D, Fletcher RB, et al. Slingshot: cell lineage and pseudotime inference for single-cell transcriptomics. BMC Genomics. 2018;19(1):477.
-20. Cable DM, Murray E, Zou LS, et al. Robust decomposition of cell type mixtures in spatial transcriptomics. Nat Biotechnol. 2022;40(4):517-526.
-21. Stuart T, Srivastava A, Madad S, et al. Single-cell chromatin state analysis with Signac. Nat Methods. 2021;18(11):1333-1341.
-22. Tibshirani R. Regression shrinkage and selection via the lasso. J R Stat Soc Series B Stat Methodol. 1996;58(1):267-288.
-23. Harrell FE Jr. Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis. 2nd ed. New York: Springer; 2015.
-24. Vickers AJ, Elkin EB. Decision curve analysis: a novel method for evaluating prediction models. Med Decis Making. 2006;26(6):565-574.
-25. Hemani G, Zheng J, Elsworth B, et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife. 2018;7:e34408.
-26. Mitchell RA, Liao H, Chesney J, et al. Macrophage migration inhibitory factor (MIF) sustains macrophage proinflammatory function by inhibiting p53: regulatory role in the innate immune response. Proc Natl Acad Sci USA. 2002;99(1):345-350.
-27. Wang LB, Karpova A, Gritsenko MA, et al. Proteogenomic and metabolomic characterization of human glioblastoma. Cancer Cell. 2021;39(4):509-528.e20.
-28. Tsherniak A, Vazquez F, Montgomery PG, et al. Defining a cancer dependency map. Cell. 2017;170(3):564-576.
-29. Iorio F, Knijnenburg TA, Vis DJ, et al. A landscape of pharmacogenomic interactions in cancer. Cell. 2016;166(3):740-754.
-30. Xu Y, Zhang C, Wu J, et al. Integrated analysis of single-cell RNA-seq and spatial transcriptomics to identify the lactylation-related protein TUBB2A as a potential biomarker for glioblastoma. Front Immunol. 2025;16:1601533. doi:10.3389/fimmu.2025.1601533.
-31. He W, Chen R, Chen G, et al. Identification and validation of prognostic genes related to histone lactylation modification in glioblastoma. J Cancer. 2025;16:2145-2166. doi:10.7150/jca.110646.
-32. Zhu H, Li G, Li T, et al. Prognostic and therapeutic response prediction in glioblastoma multiforme using a lactylation-associated gene signature. Discov Oncol. 2025;16:2313.
-33. Tang X, Liu Y, Yang C, et al. Deciphering the lactylation landscape in glioma: a novel gene signature predicts patient survival and immunotherapy sensitivity. Front Immunol. 2025;16:1664347.
-34. Lu X, Zhou Z, Qiu P, Xin T. Integrated single-cell and bulk RNA-sequencing data reveal molecular subtypes based on lactylation-related genes and prognosis and therapeutic response in glioma. Heliyon. 2024;10(11):e30726.
-35. Han R, Chi G, Sun D, Xu Z, Zhou L, Xu K. Single-cell and spatial transcriptomics reveal lactylation-associated tumor cell clusters and define a prognostic risk model in glioblastoma. BMC Cancer. 2025;25(1):1901.
-36. Bradley RK, Anczuków O. RNA splicing dysregulation and the hallmarks of cancer. Nat Rev Cancer. 2023;23(3):135-155.
-37. Steensma DP, Wermke M, Klimek VM, Greenberg PL, Font P, Komrokji RS, et al. Phase I first-in-human dose escalation study of the oral SF3B1 modulator H3B-8800 in myeloid neoplasms. Leukemia. 2021;35(12):3542-3550.
-38. Nguyen JQN, Drabarek W, Leeflang AMCHJ, et al. The impact of spliceosome inhibition in SF3B1-mutated uveal melanoma. Invest Ophthalmol Vis Sci. 2024;65(12):37.
-39. Biswas J, Boussi L, Stein E, et al. Aberrant pre-mRNA processing in cancer. J Exp Med. 2024;221(11):e20240055.
-40. Shukri AH, et al. Unraveling the battle for lysine: a review of the competition among post-translational modifications. Biochim Biophys Acta Gene Regul Mech. 2023;1866(4):194990.
+18. Street K, Risso D, Fletcher RB, et al. Slingshot: cell lineage and pseudotime inference for single-cell transcriptomics. BMC Genomics. 2018;19(1):477.
+19. Cable DM, Murray E, Zou LS, et al. Robust decomposition of cell type mixtures in spatial transcriptomics. Nat Biotechnol. 2022;40(4):517-526.
+20. Stuart T, Srivastava A, Madad S, et al. Single-cell chromatin state analysis with Signac. Nat Methods. 2021;18(11):1333-1341.
+21. Tibshirani R. Regression shrinkage and selection via the lasso. J R Stat Soc Series B Stat Methodol. 1996;58(1):267-288.
+22. Harrell FE Jr. Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis. 2nd ed. New York: Springer; 2015.
+23. Mitchell RA, Liao H, Chesney J, et al. Macrophage migration inhibitory factor (MIF) sustains macrophage proinflammatory function by inhibiting p53: regulatory role in the innate immune response. Proc Natl Acad Sci USA. 2002;99(1):345-350.
+24. Wang LB, Karpova A, Gritsenko MA, et al. Proteogenomic and metabolomic characterization of human glioblastoma. Cancer Cell. 2021;39(4):509-528.e20.
+25. Tsherniak A, Vazquez F, Montgomery PG, et al. Defining a cancer dependency map. Cell. 2017;170(3):564-576.
+26. Iorio F, Knijnenburg TA, Vis DJ, et al. A landscape of pharmacogenomic interactions in cancer. Cell. 2016;166(3):740-754.
+27. Xu Y, Zhang C, Wu J, et al. Integrated analysis of single-cell RNA-seq and spatial transcriptomics to identify the lactylation-related protein TUBB2A as a potential biomarker for glioblastoma. Front Immunol. 2025;16:1601533. doi:10.3389/fimmu.2025.1601533.
+28. He W, Chen R, Chen G, et al. Identification and validation of prognostic genes related to histone lactylation modification in glioblastoma. J Cancer. 2025;16:2145-2166. doi:10.7150/jca.110646.
+29. Zhu H, Li G, Li T, et al. Prognostic and therapeutic response prediction in glioblastoma multiforme using a lactylation-associated gene signature. Discov Oncol. 2025;16:2313.
+30. Tang X, Liu Y, Yang C, et al. Deciphering the lactylation landscape in glioma: a novel gene signature predicts patient survival and immunotherapy sensitivity. Front Immunol. 2025;16:1664347.
+31. Lu X, Zhou Z, Qiu P, Xin T. Integrated single-cell and bulk RNA-sequencing data reveal molecular subtypes based on lactylation-related genes and prognosis and therapeutic response in glioma. Heliyon. 2024;10(11):e30726.
+32. Han R, Chi G, Sun D, Xu Z, Zhou L, Xu K. Single-cell and spatial transcriptomics reveal lactylation-associated tumor cell clusters and define a prognostic risk model in glioblastoma. BMC Cancer. 2025;25(1):1901.
+33. Bradley RK, Anczuków O. RNA splicing dysregulation and the hallmarks of cancer. Nat Rev Cancer. 2023;23(3):135-155.
+34. Steensma DP, Wermke M, Klimek VM, Greenberg PL, Font P, Komrokji RS, et al. Phase I first-in-human dose escalation study of the oral SF3B1 modulator H3B-8800 in myeloid neoplasms. Leukemia. 2021;35(12):3542-3550.
+35. Nguyen JQN, Drabarek W, Leeflang AMCHJ, et al. The impact of spliceosome inhibition in SF3B1-mutated uveal melanoma. Invest Ophthalmol Vis Sci. 2024;65(12):37.
+36. Biswas J, Boussi L, Stein E, et al. Aberrant pre-mRNA processing in cancer. J Exp Med. 2024;221(11):e20240055.
+37. Shukri AH, et al. Unraveling the battle for lysine: a review of the competition among post-translational modifications. Biochim Biophys Acta Gene Regul Mech. 2023;1866(4):194990.
 
 # Figure Legends
 
