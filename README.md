@@ -82,4 +82,4 @@ All datasets are public: GSE138794, GSE194329, GSE131928, GSE7696, GSE83300 (GEO
 
 ## Citation
 
-If you use WEBS or this pipeline, please cite the manuscript (under review) and archive DOI: https://doi.org/10.5281/zenodo.23791323
+If you use WEBS or this pipeline, please cite the manuscript (under review) and archive DOI: Zenodo (upon publication)

@@ -1,0 +1,22 @@
+=== (a) CGGA-693 vs CGGA-325 ===
+cgga693 samples: 657  cgga325: 313  overlap: 0 
+
+=== (b) Spliceosome phosphosites (raw) ===
+sig total: 198  up: 197  down: 1 
+corrected sig total: 124  up: 6  down: 118 
+SRSF sig sites: 39  up: 39 
+
+=== (c) GENIE3 regulator-level test ===
+14 regulator ratios (spliceosome/other): 1.47, 1.46, 1.41, 1.45, 1.49, 1.53, 1.43, 1.48, 1.46, 1.42, 1.31, 1.44, 1.53, 1.5 
+One-sample Wilcoxon (ratio > 1, n = 14 regulators): p = 6.1e-05 
+
+=== (d) Protein WEBS z-score sensitivity ===
+Samples with complete 10+16 proteins: 9 / 99 
+Spearman rho (original vs z-scored protein WEBS): 0.952  p = 0 
+
+=== (e) Acetylome site accounting ===
+Total sites in file: 13556 
+Tested (limma): 8350 
+spliceosome sites tested: 102 
+Jonckheere table rows: 43 
+Jonckheere significant (p<0.05): 43 / 43 
