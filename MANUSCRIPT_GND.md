@@ -67,7 +67,7 @@ scRNA-seq: GSE138794 (35,823 QC-passed cells, 20 samples, 17 patients). Spatial:
 
 ## 2.2 WEBS computation
 
-Writers: EP300, KAT2A, KAT2B, KAT5, KAT8, CREBBP. Erasers: HDAC1, HDAC2, HDAC3, SIRT1, SIRT2, SIRT3, SIRT6, SIRT7. Single-cell WEBS = UCell(writer) − UCell(eraser), with maxRank fixed at 1,500 — approximately 75% of detected genes per cell, balancing sensitivity and specificity (sensitivity analysis in Fig. S2). Bulk WEBS = mean log2(writer + 1) − mean log2(eraser + 1). Protein WEBS = mean(writer) − mean(eraser) over all writer/eraser proteins quantified in the TMT panel (10 of the writer-class and 16 of the eraser-class proteins detected; the panel differs from the 6/8 gene-level sets because TMT detection is incomplete; no imputation was applied). IQR stratification: bottom 25% low-WEBS state (LLS), middle 50% intermediate-WEBS state (LDTS), top 25% high-WEBS state (LHS). Note that WEBS is an expression-level score of writer/eraser balance; the state labels do not imply direct measurement of any specific lysine acylation.
+Writers: EP300, KAT2A, KAT2B, KAT5, KAT8, CREBBP. Erasers: HDAC1, HDAC2, HDAC3, SIRT1, SIRT2, SIRT3, SIRT6, SIRT7. Single-cell WEBS = UCell(writer) − UCell(eraser), with maxRank fixed at 1,500 (approximately 7.5% of the ~20,000-gene universe). Parameter sensitivity was evaluated across maxRank values defined as 5%–90% of the full gene universe (i.e., 1,000–18,000), using the same gene sets and scoring procedure (Fig. S2); scores were stable up to ~10% of genes (ρ ≥ 0.95 vs the default). Bulk WEBS = mean log2(writer + 1) − mean log2(eraser + 1). Protein WEBS = mean(writer) − mean(eraser) over all writer/eraser proteins quantified in the TMT panel (10 of the writer-class and 16 of the eraser-class proteins detected; the panel differs from the 6/8 gene-level sets because TMT detection is incomplete; no imputation was applied). IQR stratification: bottom 25% low-WEBS state (LLS), middle 50% intermediate-WEBS state (LDTS), top 25% high-WEBS state (LHS). Note that WEBS is an expression-level score of writer/eraser balance; the state labels do not imply direct measurement of any specific lysine acylation.
 
 ## 2.3 Single-cell analysis
 
@@ -133,7 +133,7 @@ Slingshot pseudotime on 7,952 neoplastic cells (LLS origin) placed WEBS along a 
 
 ## 3.4 Proteome-wide spliceosome accumulation tracks the writer–eraser balance at the protein but not the mRNA level
 
-Protein-level WEBS stratified 99 CPTAC-GBM tumors. Differential abundance (limma, LHS vs LLS) revealed 107 of 111 quantified spliceosome proteins up-regulated in LHS with none down-regulated (enrichment p = 3.4 × 10⁻³⁷); the direction-uniform up-regulation was robust to stratification threshold (109–111/111 across 20%/25%/30% quantile cutoffs and median split; Supplementary Table S_thresh). Spliceosome abundance tracked protein-level WEBS (ρ = 0.79, 95% bootstrap CI 0.68–0.87) but not mRNA-level WEBS (ρ = −0.03, 95% CI −0.22 to 0.18); the layer discordance (Δρ = 0.81) was formally significant (bootstrap 95% CI 0.60–1.03, p < 0.0001), was not driven by any single protein (leave-one-protein-out ρ range 0.788–0.795), held at the per-gene level (107/109 genes showed stronger protein- than mRNA-layer correlation; Fig. S22), and persisted after controlling for proliferation and immune-content protein scores (partial ρ = 0.65, p = 9.7 × 10⁻¹³) as well as mesenchymal, hypoxia, and OPC-like programs (joint partial ρ = 0.66, p = 5.8 × 10⁻¹³). Notably, an expression-matched permutation control (10,000 random gene sets matched for proteome abundance) showed that partial protein–mRNA discordance is a generic property of abundant protein complexes (spliceosome empirical p = 0.22 by this stricter criterion; Fig. S7); the spliceosome-specific claims in this study therefore rest on the uniform direction of regulation (107/111), its enrichment statistics, and the functional layers below, rather than on discordance magnitude alone. Protein WEBS also correlated with overall histone acetylation (r = 0.62, p = 5.3 × 10⁻¹²).
+Protein-level WEBS stratified 99 CPTAC-GBM tumors. Differential abundance (limma, LHS vs LLS) revealed 107 of 111 quantified spliceosome proteins significantly up-regulated in LHS (FDR < 0.05) with none significantly down-regulated (enrichment p = 3.4 × 10⁻³⁷); notably, 110 of the 111 proteins showed positive log fold-changes, indicating a broadly shifted abundance pattern across the complex. the direction-uniform up-regulation was robust to stratification threshold (109–111/111 across 20%/25%/30% quantile cutoffs and median split; Supplementary Table S_thresh). Spliceosome abundance tracked protein-level WEBS (ρ = 0.79, 95% bootstrap CI 0.68–0.87) but not mRNA-level WEBS (ρ = −0.03, 95% CI −0.22 to 0.18); the layer discordance (Δρ = 0.81) was formally significant (bootstrap 95% CI 0.60–1.03, p < 0.0001), was not driven by any single protein (leave-one-protein-out ρ range 0.788–0.795), held at the per-gene level (107/109 genes showed stronger protein- than mRNA-layer correlation; Fig. S22), and persisted after controlling for proliferation and immune-content protein scores (partial ρ = 0.65, p = 9.7 × 10⁻¹³) as well as mesenchymal, hypoxia, and OPC-like programs (joint partial ρ = 0.66, p = 5.8 × 10⁻¹³). Notably, an expression-matched permutation control (10,000 random gene sets matched for proteome abundance) showed that partial protein–mRNA discordance is a generic property of abundant protein complexes (spliceosome empirical p = 0.22 by this stricter criterion; Fig. S7); the spliceosome-specific claims in this study therefore rest on the uniform direction of regulation (107/111), its enrichment statistics, and the functional layers below, rather than on discordance magnitude alone. Protein WEBS also correlated with overall histone acetylation (r = 0.62, p = 5.3 × 10⁻¹²).
 
 ## 3.5 Mechanistic evidence: splicing-factor acetylation couples to protein abundance
 
@@ -163,7 +163,7 @@ Exploiting the longitudinal design of GLASS, we found that higher primary-tumor 
 
 The signature's full performance profile is summarized in Supplementary Table S_perf: per-SD hazard ratios were 1.61 (TCGA-GBM, training), 1.14 (CGGA-693), 1.42 (CGGA-325), and 1.73 (GLASS), with C-indices of 0.62–0.67 and 3-year time-dependent AUCs of 0.67–0.76 — consistent with a moderate, auxiliary stratification marker rather than a stand-alone clinical tool.
 
-Adjustment for clinical covariates (age, sex, IDH status, MGMT promoter methylation, grade) retained significance in CGGA-325 (p = 0.0011) but attenuated in CGGA-693 (p = 0.182) — reported transparently. Exploratory Cox models including a risk × treatment interaction term (risk score continuous; treatment as recorded binary variables; four interaction tests across two cohorts, uncorrected) suggested treatment-context-dependent prognostic strength (risk × temozolomide: p = 0.0024 and p = 7.7 × 10⁻⁴; risk × radiotherapy: p = 4.5 × 10⁻⁴ and p = 0.026, in CGGA-693 and CGGA-325 respectively); these retrospective associations do not constitute validated treatment-benefit prediction (Fig. S12). Joint stratification with MGMT promoter methylation improved discrimination over either marker alone (p < 10⁻¹³ in both cohorts; Fig. S13). A fixed-effect meta-analysis across TCGA-GBM, CGGA-693 and CGGA-325 yielded a pooled HR of 1.35 (p = 0.0028; Fig. S15).
+Adjustment for clinical covariates (age, sex, IDH status, MGMT promoter methylation, grade) retained significance in CGGA-325 (p = 0.0011) but attenuated in CGGA-693 (p = 0.182) — reported transparently. Exploratory Cox models including a risk × treatment interaction term (risk score continuous; treatment as recorded binary variables; four interaction tests across two cohorts, uncorrected) suggested treatment-context-dependent prognostic strength (risk × temozolomide: p = 0.0024 and p = 7.7 × 10⁻⁴; risk × radiotherapy: p = 4.5 × 10⁻⁴ and p = 0.026, in CGGA-693 and CGGA-325 respectively); these retrospective associations do not constitute validated treatment-benefit prediction (Fig. S12). Joint stratification with MGMT promoter methylation improved discrimination over either marker alone (p < 10⁻¹³ in both cohorts; Fig. S13). Given substantial between-cohort heterogeneity (I² = 91.4%, Q p = 8.5 × 10⁻⁶), a random-effects meta-analysis across TCGA-GBM, CGGA-693 and CGGA-325 was taken as the primary pooled estimate (HR = 1.35, p = 0.0028); the common-effect estimate (HR = 1.23, p = 9.0 × 10⁻¹⁸) is reported as a sensitivity analysis (Fig. S15).
 
 Bootstrap resampling of the LASSO training pipeline (1,000 iterations) confirmed stability of feature selection (HDAC1 selected in 99.9% of iterations; Fig. S5); SHAP identified HDAC1 as the dominant protective contributor (Fig. S6), and pathway-level SHAP aggregation pointed to hypoxia and glycolysis programs as the dominant risk-driving biology (Fig. S19). Ablation analysis showed that no single gene dominates predictive performance (largest leave-one-out C-index decrease −0.033 for HIF1A; Supplementary Table S_ablation), indicating a distributed rather than single-gene-driven signature. An RPPA lactate-metabolism score stratified TCGA-GBM survival at the protein level (log-rank p = 0.016, n = 71).
 
@@ -332,34 +332,34 @@ The authors thank the data-generating consortia (TCGA, CPTAC, CGGA, GLASS, DepMa
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 1](submission_GND/Figures/jpg/Figure_1.jpg)
+![Figure 1](submission_GND/02_Figures/Figure_1.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 2](submission_GND/Figures/jpg/Figure_2.jpg)
+![Figure 2](submission_GND/02_Figures/Figure_2.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 3](submission_GND/Figures/jpg/Figure_3.jpg)
+![Figure 3](submission_GND/02_Figures/Figure_3.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 4](submission_GND/Figures/jpg/Figure_4.jpg)
+![Figure 4](submission_GND/02_Figures/Figure_4.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 5](submission_GND/Figures/jpg/Figure_5.jpg)
+![Figure 5](submission_GND/02_Figures/Figure_5.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 6](submission_GND/Figures/jpg/Figure_6.jpg)
+![Figure 6](submission_GND/02_Figures/Figure_6.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 7](submission_GND/Figures/jpg/Figure_7.jpg)
+![Figure 7](submission_GND/02_Figures/Figure_7.jpg)

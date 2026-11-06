@@ -1,0 +1,7 @@
+setwd("E:/KIMI/GBM_WEBS_Project")
+suppressMessages(library(meta))
+res <- read.csv("results/meta_analysis_input.csv")
+m <- metagen(TE = res$TE, seTE = res$seTE, studlab = res$cohort, sm = "HR", method.tau = "REML")
+cat("Common (fixed) effect: HR =", round(exp(m$TE.common), 3), " p =", m$pval.common, "\n")
+cat("Random effects:       HR =", round(exp(m$TE.random), 3), " p =", m$pval.random, "\n")
+cat("I2 =", round(m$I2 * 100, 1), "%  tau2 =", round(m$tau^2, 4), " Q p =", m$pval.Q, "\n")

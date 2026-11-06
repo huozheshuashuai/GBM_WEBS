@@ -58,9 +58,14 @@ plot(cv_fit$glmnet.fit, xvar = "lambda", label = TRUE, main = "Coefficient paths
 dev.off()
 
 # ---- 2. Validation across cohorts ----
+# Canonical validation uses the FIXED six-gene signature coefficients
+# (from the primary analysis), NOT the LASSO coefficients re-fit above.
+PAPER_COEFS <- c(HIF1A = -0.284, SIRT2 = -0.176, MMP2 = 0.262,
+                 ITGA5 = 0.230, HDAC1 = -0.220, SPP1 = 0.146)
+
 validate <- function(expr_v, clin_v, cohort) {
-  genes_v <- intersect(rownames(coefs), rownames(expr_v))
-  rs <- as.vector(t(expr_v[genes_v, , drop = FALSE]) %*% coefs[genes_v, 1])
+  genes_v <- intersect(names(PAPER_COEFS), rownames(expr_v))
+  rs <- as.vector(t(expr_v[genes_v, , drop = FALSE]) %*% PAPER_COEFS[genes_v])
   names(rs) <- colnames(expr_v)
   clin_v$risk <- rs[match(clin_v$sample, names(rs))]
   clin_v <- clin_v[!is.na(clin_v$risk), ]

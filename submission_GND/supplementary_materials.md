@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-**Manuscript**: Post-transcriptional spliceosome accumulation defines a therapeutically targetable malignant cell state in glioblastoma
+**Manuscript**: Post-transcriptional spliceosome accumulation marks a writer-dominant malignant cell state in glioblastoma
 
 This document describes all supplementary figures and tables.
 
@@ -38,7 +38,7 @@ This document describes all supplementary figures and tables.
 
 **Figure S14 | GLASS longitudinal WEBS.** WEBS in paired primary and first-recurrence glioma samples (n = 179 pairs; paired Wilcoxon p = 0.09): no systematic change at recurrence.
 
-**Figure S15 | Meta-analysis of the six-gene signature.** Fixed-effect meta-analysis across TCGA-GBM, CGGA-693, and CGGA-325 (pooled HR = 1.35, p = 0.0028).
+**Figure S15 | Meta-analysis of the six-gene signature.** Random-effects meta-analysis across TCGA-GBM, CGGA-693, and CGGA-325 (primary pooled HR = 1.35, p = 0.0028; I² = 91.4%). The common-effect estimate (HR = 1.23) is shown as a sensitivity analysis.
 
 **Figure S16 | Similarity network fusion (SNF).** Consensus clustering across CPTAC proteome, acetylome, and transcriptome; clusters recapitulate WEBS stratification (Kruskal–Wallis p = 7.1 × 10⁻⁷).
 
@@ -86,7 +86,9 @@ This document describes all supplementary figures and tables.
 | S_MIF_perm | MIF→CD74/CXCR4 permutation test |
 | S_docking | Molecular docking binding energies (4 target–ligand pairs) |
 | S_ablation | Ablation study: leave-one-out and single-gene C-indices of the six-gene signature (TCGA-GBM) |
-| S_signature_performance | Six-gene signature performance across all cohorts: per-SD HR (95% CI), C-index, time-dependent AUC (12/36/60 months) |
+| S_splicing_sig4387 | Complete list of the 4,387 WEBS-associated alternative splicing events (event ID, gene, type, rho, p, q) |
+| S_splicing_top | Top 500 WEBS-associated splicing events by |rho| (subset of S_splicing_sig4387) |
+| S_signature_performance | Six-gene signature performance across all cohorts: per-SD HR (95% CI), C-index, time-dependent AUC (12/36/60 months). Note: per-SD HRs are standardized within each cohort; the per-unit HRs quoted in the main text for GSE7696/GSE83300 use the raw risk-score scale and are therefore not directly comparable in magnitude |
 | S_threshold_sensitivity | Spliceosome up-regulation robustness across WEBS stratification thresholds (109–111/111 up-regulated) |
 | S_protein_WEBS | Protein-level WEBS composition: 10 writer and 16 eraser proteins quantified in the CPTAC TMT panel |
 

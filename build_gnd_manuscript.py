@@ -78,37 +78,37 @@ fig_section = """# Figures
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 1](submission_GND/Figures/jpg/Figure_1.jpg)
+![Figure 1](submission_GND/02_Figures/Figure_1.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 2](submission_GND/Figures/jpg/Figure_2.jpg)
+![Figure 2](submission_GND/02_Figures/Figure_2.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 3](submission_GND/Figures/jpg/Figure_3.jpg)
+![Figure 3](submission_GND/02_Figures/Figure_3.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 4](submission_GND/Figures/jpg/Figure_4.jpg)
+![Figure 4](submission_GND/02_Figures/Figure_4.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 5](submission_GND/Figures/jpg/Figure_5.jpg)
+![Figure 5](submission_GND/02_Figures/Figure_5.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 6](submission_GND/Figures/jpg/Figure_6.jpg)
+![Figure 6](submission_GND/02_Figures/Figure_6.jpg)
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
-![Figure 7](submission_GND/Figures/jpg/Figure_7.jpg)
+![Figure 7](submission_GND/02_Figures/Figure_7.jpg)
 """
 src = re.sub(r"# Figures\n\n.*", fig_section, src, flags = re.S)
 
