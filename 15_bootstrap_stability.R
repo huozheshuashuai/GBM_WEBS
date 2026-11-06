@@ -1,7 +1,7 @@
 # =============================================================================
 # 15. Bootstrap Stability of LASSO-Cox Feature Selection (six-gene signature)
 # =============================================================================
-# 100 bootstrap resamples of the training cohort; record how often each gene
+# 1,000 bootstrap resamples of the training cohort; record how often each gene
 # is selected (non-zero coefficient). Demonstrates the signature is not an
 # overfitting artifact.
 # Input:  data/raw/CGGA/ expression matrix + clinical (see CONFIG below)
@@ -27,7 +27,7 @@ CANDIDATE_GENES <- c(
   "HIF1A", "CA9", "VEGFA", "LDHA", "LDHB", "PKM", "MCT4", "ENO1", "ENO2", "GAPDH",
   "MMP2", "ITGA5", "SPP1", "FN1"
 )
-N_BOOT <- 100
+N_BOOT <- 1000
 
 if (!file.exists(EXPR_FILE) || !file.exists(CLIN_FILE)) {
   stop("CGGA training data not found. Download from http://www.cgga.org.cn/ ",
@@ -94,7 +94,7 @@ p <- ggplot(freq_df, aes(x = reorder(gene, selection_frequency),
   scale_fill_manual(values = c("TRUE" = "#d62728", "FALSE" = "#7f7f7f"),
                     labels = c("Not in final model", "In final six-gene model")) +
   theme_bw(base_size = 12) +
-  labs(x = NULL, y = "Selection frequency (100 bootstraps)",
+  labs(x = NULL, y = "Selection frequency (1,000 bootstraps)",
        fill = NULL,
        title = "Bootstrap stability of LASSO-Cox feature selection")
 

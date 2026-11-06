@@ -130,14 +130,16 @@ p4c <- ggplot(kdf, aes(reorder(kinase, rho), rho, fill = sig)) +
   theme_bw(base_size = 10) + theme(legend.position = "none") +
   labs(x = NULL, y = "Spearman rho vs WEBS", title = "Splicing kinases")
 
-# (d) virtual KO
-ko <- read.csv("results/virtual_ko_summary.csv")
-ko$type <- ifelse(ko$ko_gene %in% c("EP300","KAT2A","KAT2B","KAT5","KAT8","CREBBP"), "Writer", "Eraser")
-p4d <- ggplot(ko, aes(reorder(ko_gene, spliceosome_mean_shift), spliceosome_mean_shift, fill = type)) +
+# (d) virtual KO (absolute sensitivity ratio)
+ko <- read.csv("results/virtual_ko_abs_summary.csv")
+ko$type <- ifelse(ko$ko %in% c("EP300","KAT2A","KAT2B","KAT5","KAT8","CREBBP"), "Writer", "Eraser")
+p4d <- ggplot(ko, aes(reorder(ko, ratio), ratio, fill = type)) +
   geom_bar(stat = "identity") + coord_flip() +
+  geom_hline(yintercept = 1, linetype = "dashed") +
   scale_fill_manual(values = c("Writer" = PURPLE, "Eraser" = TEAL)) +
   theme_bw(base_size = 10) + theme(legend.position = "none") +
-  labs(x = NULL, y = "Predicted spliceosome shift", title = "Virtual KO (GENIE3)")
+  labs(x = NULL, y = "Relative |shift| (spliceosome / other)",
+       title = "Virtual KO: spliceosome sensitivity")
 
 fig4 <- (p4a | p4b) / (p4c | p4d) + plot_annotation(tag_levels = "a")
 ggsave("figures_GND/Figure_4.pdf", fig4, width = 12, height = 9)

@@ -1,0 +1,23 @@
+=== Virtual KO (absolute connectivity-based sensitivity) ===
+
+S_r = mean |predicted shift| per KO; ratio = spliceosome / other genes
+
+# A tibble: 14 × 6
+   ko     spliceosome_abs other_abs n_splice ratio type  
+   <chr>            <dbl>     <dbl>    <int> <dbl> <chr> 
+ 1 KAT2A           0.123     0.0803      113  1.53 Writer
+ 2 SIRT6           0.0790    0.0518      113  1.53 Eraser
+ 3 SIRT7           0.0780    0.0520      113  1.50 Eraser
+ 4 HDAC3           0.0897    0.0601      113  1.49 Eraser
+ 5 KAT5            0.116     0.0778      113  1.48 Writer
+ 6 CREBBP          0.0995    0.0676      113  1.47 Writer
+ 7 EP300           0.0884    0.0604      113  1.46 Writer
+ 8 KAT8            0.108     0.0741      113  1.46 Writer
+ 9 HDAC2           0.205     0.142       113  1.45 Eraser
+10 SIRT3           0.0514    0.0357      113  1.44 Eraser
+11 KAT2B           0.0941    0.0658      113  1.43 Writer
+12 SIRT1           0.0492    0.0347      113  1.42 Eraser
+13 HDAC1           0.0787    0.0559      113  1.41 Eraser
+14 SIRT2           0.227     0.173       113  1.31 Eraser
+
+All KOs pooled: spliceosome |shift| vs other: median 0.09281 vs 0.07467, Wilcoxon p = 2.08e-113
