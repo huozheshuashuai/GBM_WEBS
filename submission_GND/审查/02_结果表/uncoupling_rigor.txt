@@ -1,0 +1,13 @@
+=== RNA-protein uncoupling rigor ===
+
+Pathway-level: rho_protein = 0.790 (95% CI 0.677 to 0.873)
+                 rho_mRNA    = -0.024 (95% CI -0.223 to 0.181)
+                 delta       = 0.814 (95% CI 0.594 to 1.025), bootstrap p = 0.0000
+
+Leave-one-protein-out: rho_protein range 0.788 to 0.795 (min drop 0.002)
+
+Partial correlation controlling proliferation + immune protein scores:
+  protein: rho = 0.645, p = 9.72e-13
+  mRNA:    rho = 0.004, p = 0.969
+
+Per-gene: protein rho > mRNA rho in 107/109 genes; median protein rho = 0.65, median mRNA rho = -0.07
