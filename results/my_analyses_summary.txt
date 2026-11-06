@@ -1,0 +1,43 @@
+=== (1) Jonckheere trend test (LLS<LDTS<LHS) ===
+Significant spliceosome sites tested: 43 
+Monotone increasing (FDR<0.05): 43 
+Median p: 1.43e-05 
+
+=== (2) Proteome-wide discordance tail ===
+Genes tested: 10480 | spliceosome: 108 
+Spliceosome mean discordance: 0.663  | all others: 0.005 
+Wilcoxon p: 4.67e-49 
+Empirical p (spliceosome mean >= others): 0.0537 
+
+=== (3) Protein half-life (Mathieson 2018) ===
+half-life data unavailable (download failed) — skipped
+
+=== (4) Meta-analysis of six-gene signature ===
+
+Random-effects pooled HR (per SD of risk score):
+             HR           95% CI %W(common) %W(random)
+TCGA-GBM 1.6122 [1.3020; 1.9962]        4.7       26.7
+cgga693  1.1379 [1.0764; 1.2028]       69.5       37.6
+cgga325  1.4215 [1.2975; 1.5573]       25.8       35.8
+
+Number of studies: k = 3
+
+                         HR           95% CI    z  p-value
+Common effect model  1.2249 [1.1695; 1.2830] 8.59 < 0.0001
+Random effects model 1.3521 [1.1094; 1.6479] 2.99   0.0028
+
+Quantifying heterogeneity (with 95% CIs):
+ tau^2 = 0.0263 [0.0045; 1.2243]; tau = 0.1622 [0.0671; 1.1065]
+ I^2 = 91.4% [78.0%; 96.7%]; H = 3.42 [2.13; 5.48]
+
+Test of heterogeneity:
+     Q d.f.  p-value
+ 23.34    2 < 0.0001
+
+Details of meta-analysis methods:
+- Inverse variance method
+- Restricted maximum-likelihood estimator for tau^2
+- Q-Profile method for confidence interval of tau^2 and tau
+- Calculation of I^2 based on Q
+null device 
+          1 

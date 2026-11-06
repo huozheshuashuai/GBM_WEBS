@@ -1,0 +1,5 @@
+=== GLASS: primary WEBS vs time to recurrence ===
+Pairs with interval: 213 
+Spearman rho = 0.327  p = 1.1e-06 
+Median interval Low: 10  High: 18  Wilcoxon p = 4.37e-05 
+Interval vs WEBS change: rho = -0.23  p = 0.00072 

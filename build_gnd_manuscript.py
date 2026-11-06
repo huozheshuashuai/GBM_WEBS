@@ -24,18 +24,19 @@ src = re.sub(r"# Abstract\n\n.*?\n\n\(\d+ words\)", new_abstract, src, flags = r
 # Fig. 10 -> Fig. 6 (KM) ; Fig. 11 -> Fig. 7c,d ; Fig. 12 -> Fig. S33
 # Fig. 9 -> S31 ; Fig. 8 -> S30 ; Fig. 7 -> S29 ; Fig. 6 -> S28 ; Fig. 5 -> S27 ; Fig. 4 -> S26 ; Fig. 3 -> S25
 reps = [
-    ("Fig. 13a,b", "Fig. 5a"), ("Fig. 13d", "Fig. 4b"), ("Fig. 13e", "Fig. 4c"),
+    ("Fig. 4a", "Fig. S26a"), ("Fig. 4b", "S26b"), ("Fig. 4c,d", "Fig. S26c,d"),
+    ("Fig. 13a,b", "Fig. 5a,b"), ("Fig. 13d", "Fig. 4b"), ("Fig. 13e", "Fig. 4c"),
     ("Fig. 13f", "Fig. 4d"), ("Fig. 13c", "Fig. 5c"),
     ("Fig. 14a", "Fig. 6d"), ("Fig. 14b", "Fig. 7a"), ("Fig. 14c", "Fig. S32"),
     ("Fig. 14d", "Fig. S32"),
-    ("Fig. 10)", "Fig. 6)"), ("(Fig. 10)", "(Fig. 6)"),
+    ("ρ = 0.70; Fig. S23)", "ρ = 0.70; Fig. 5d),"),
+    ("Fig. 10)", "Fig. 6)"), ("(Fig. 10)", "(Fig. 6a–d)"),
     ("Fig. 11)", "Fig. 7c,d)"),
     ("(Fig. 12)", "(Fig. S33)"),
     ("Fig. 9)", "Fig. S31)"), ("Fig. 8,", "Fig. S30,"),
     ("Fig. 7,", "Fig. S29,"),
     ("Fig. 6),", "Fig. S28),"), ("(Fig. 6)", "(Fig. S28)"),
     ("Fig. 5)", "Fig. S27)"),
-    ("Fig. 4a", "Fig. S26a"), ("Fig. 4b", "S26b"), ("Fig. 4c,d", "Fig. S26c,d"),
     ("Fig. 2, Fig. 3", "Fig. 2, Fig. S25"),
     ("(all p > 0.4; Fig. 8)", "(all p > 0.4; Fig. S30)"),
     ("is summarized in Fig. 9.", "is summarized in Fig. S31."),
@@ -116,5 +117,12 @@ src = re.sub(r"# Figures\n\n.*", fig_section, src, flags = re.S)
 src = src.replace("(Fig. 11)", "(Fig. 7c,d)")
 src = src.replace("(Fig. 7c,d). Notably", "(Fig. 7c,d). Notably")
 
+# add citations to new GND figures
+src = src.replace("was further validated in the GLASS cohort (107 primary tumors: Cox HR = 2.14, p = 2.0 × 10⁻⁶; log-rank p = 4.2 × 10⁻⁵; Fig. 6d)",
+                  "was further validated in the GLASS cohort (107 primary tumors: Cox HR = 2.14, p = 2.0 × 10⁻⁶; log-rank p = 4.2 × 10⁻⁵; Fig. 6)")
+src = src.replace("indicating a broadly shifted abundance pattern across the complex. the direction-uniform",
+                  "indicating a broadly shifted abundance pattern across the complex (Fig. 3). The direction-uniform")
+src = src.replace("the spliceosome enrichment was attenuated but remained significant (OR = 2.29, p = 0.003)",
+                  "the spliceosome enrichment was attenuated but remained significant (OR = 2.29, p = 0.003; Fig. 4a)")
 open("MANUSCRIPT_GND.md", "w", encoding="utf-8").write(src)
 print("MANUSCRIPT_GND.md written,", len(src), "chars")

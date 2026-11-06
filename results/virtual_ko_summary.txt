@@ -1,0 +1,25 @@
+=== Virtual KO via GENIE3 GRN ===
+
+# A tibble: 14 × 5
+   ko_gene spliceosome_mean_shift other_mean_shift    diff n_splice
+   <chr>                    <dbl>            <dbl>   <dbl>    <int>
+ 1 SIRT2                  -0.227           -0.173  -0.0541      113
+ 2 HDAC2                  -0.205           -0.142  -0.0635      113
+ 3 KAT2A                  -0.123           -0.0803 -0.0426      113
+ 4 KAT5                   -0.116           -0.0778 -0.0377      113
+ 5 KAT8                   -0.108           -0.0741 -0.0340      113
+ 6 CREBBP                 -0.0995          -0.0676 -0.0319      113
+ 7 KAT2B                  -0.0941          -0.0658 -0.0282      113
+ 8 HDAC3                  -0.0897          -0.0601 -0.0296      113
+ 9 EP300                  -0.0884          -0.0604 -0.0280      113
+10 SIRT6                  -0.0790          -0.0518 -0.0273      113
+11 HDAC1                  -0.0787          -0.0559 -0.0228      113
+12 SIRT7                  -0.0780          -0.0520 -0.0260      113
+13 SIRT3                  -0.0514          -0.0357 -0.0157      113
+14 SIRT1                  -0.0492          -0.0347 -0.0145      113
+
+Note: GENIE3 weights are unsigned, so KO direction reflects connectivity,
+not activating/repressing sign. Key result: spliceosome genes are
+disproportionately shifted vs other genes for all 14 regulators (diff < 0),
+strongest for SIRT2 and HDAC2 KO - consistent with privileged coupling
+between acetylation regulators and the spliceosome program.

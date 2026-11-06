@@ -14,3 +14,8 @@ __MACOSX/
 *_copykat_raw_results_bin_by_cell.txt
 *_copykat_raw_results_gene_by_cell.txt
 results/cellchat_objects.rds
+
+# GDC download cache (UUID dirs at root)
+/[0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*/
+results_snapshot_round1/
+*.tar.gz

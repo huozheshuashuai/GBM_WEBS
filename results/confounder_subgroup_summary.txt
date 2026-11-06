@@ -1,0 +1,38 @@
+
+########## cgga693 (n = 657 ) ##########
+
+-- Confounder adjustment --
+Univariate:      HR = 1  p = 0.0116 
+Multivariable:   HR = 1  p = 0.182  (adjusted for age, gender, IDH, MGMT, grade)
+
+-- Subgroup HRs (per-unit risk) --
+  IDH-wildtype         n= 221  HR=1.000  p=0.463
+  IDH-mutant           n= 255  HR=1.003  p=0.000207
+  MGMT methylated      n= 280  HR=1.000  p=0.167
+  MGMT unmethylated    n= 196  HR=1.001  p=0.027
+  Primary              n= 296  HR=1.003  p=4.92e-08
+  Recurrent            n= 180  HR=1.000  p=0.637
+  WHO grade IV         n= 185  HR=1.000  p=0.313
+
+-- Treatment interaction (risk × treatment) --
+  risk × TMZ interaction: HR = 0.998, p = 0.00239
+  risk × RT interaction: HR = 0.997, p = 0.000454
+
+########## cgga325 (n = 313 ) ##########
+
+-- Confounder adjustment --
+Univariate:      HR = 1.001  p = 3.7e-13 
+Multivariable:   HR = 1.001  p = 0.00111  (adjusted for age, gender, IDH, MGMT, grade)
+
+-- Subgroup HRs (per-unit risk) --
+  IDH-wildtype         n= 137  HR=1.001  p=2.88e-05
+  IDH-mutant           n= 153  HR=1.001  p=0.0516
+  MGMT methylated      n= 149  HR=1.001  p=8.2e-06
+  MGMT unmethylated    n= 141  HR=1.001  p=8.36e-08
+  Primary              n= 207  HR=1.001  p=1.19e-15
+  Recurrent            n=  54  HR=1.001  p=0.0608
+  WHO grade IV         n= 135  HR=1.001  p=0.0244
+
+-- Treatment interaction (risk × treatment) --
+  risk × TMZ interaction: HR = 0.999, p = 0.000772
+  risk × RT interaction: HR = 0.999, p = 0.0258

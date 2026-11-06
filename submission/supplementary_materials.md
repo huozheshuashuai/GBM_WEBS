@@ -88,6 +88,14 @@ This document describes all supplementary figures and tables.
 | S_ablation | Ablation study: leave-one-out and single-gene C-indices of the six-gene signature (TCGA-GBM) |
 | S_splicing_sig4387 | Complete list of the 4,387 WEBS-associated alternative splicing events (event ID, gene, type, rho, p, q) |
 | S_splicing_top | Top 500 WEBS-associated splicing events by |rho| (subset of S_splicing_sig4387) |
+| S_pancancer33 | Pan-cancer WEBS–spliceosome correlation and signature HR across 33 TCGA cohorts |
+| S_virtualKO | GENIE3 connectivity sensitivity summary (absolute shift ratios per regulator) |
+| S_glass_longitudinal | GLASS primary–recurrence paired WEBS data (179 pairs, 148 patients) |
+| S_glass_primary | GLASS primary-tumor WEBS and risk scores with survival (n = 107) |
+| S_phospho_spliceosome | Spliceosome phosphosite statistics (raw and abundance-corrected) |
+| S_splicing_enrichment | GO enrichment of genes harboring WEBS-associated splicing events |
+| S_Table2_targets | Candidate therapeutic vulnerability prioritization (Table 2) |
+| S_glass_design | GLASS analysis units: sample sizes, units, and inclusion criteria per analysis |
 | S_signature_performance | Six-gene signature performance across all cohorts: per-SD HR (95% CI), C-index, time-dependent AUC (12/36/60 months). Note: per-SD HRs are standardized within each cohort; the per-unit HRs quoted in the main text for GSE7696/GSE83300 use the raw risk-score scale and are therefore not directly comparable in magnitude |
 | S_threshold_sensitivity | Spliceosome up-regulation robustness across WEBS stratification thresholds (109–111/111 up-regulated) |
 | S_protein_WEBS | Protein-level WEBS composition: 10 writer and 16 eraser proteins quantified in the CPTAC TMT panel |

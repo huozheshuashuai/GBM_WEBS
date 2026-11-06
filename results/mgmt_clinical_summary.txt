@@ -1,0 +1,30 @@
+
+===  cgga693  (n = 522 ) ===
+  variable         pval   method   pval.txt
+1    joint 1.040572e-13 Log-rank p < 0.0001
+
+  Methylated + High    Methylated + Low Unmethylated + High  Unmethylated + Low 
+                144                 160                 117                 101 
+
+-- Clinical associations (Spearman/t-test) --
+Age: rho = 0.171 
+  Gender: KW p = 0.512
+  Grade: KW p = 7.14e-27
+  PRS_type: KW p = 4.67e-06
+  IDH_mutation: KW p = 1.14e-31
+  MGMTp_methylation_status: KW p = 0.00213
+
+===  cgga325  (n = 295 ) ===
+  variable         pval   method   pval.txt
+1    joint 1.014884e-14 Log-rank p < 0.0001
+
+  Methylated + High    Methylated + Low Unmethylated + High  Unmethylated + Low 
+                 69                  83                  82                  61 
+
+-- Clinical associations (Spearman/t-test) --
+Age: rho = 0.36 
+  Gender: KW p = 0.103
+  Grade: KW p = 2.11e-16
+  PRS_type: KW p = 0.489
+  IDH_mutation: KW p = 6.57e-23
+  MGMTp_methylation_status: KW p = 0.00418

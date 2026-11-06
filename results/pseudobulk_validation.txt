@@ -1,0 +1,52 @@
+=== Pseudoreplication control (patient as unit / random effect) ===
+Cells: 7952  Patients: 8 
+
+-- Pseudobulk WEBS by Neftel state (patient x state means) --
+# A tibble: 4 × 3
+  Neftel_state n_patients median_WEBS
+  <chr>             <int>       <dbl>
+1 AC                    8      -0.017
+2 MES                   3      -0.002
+3 NPC                   7      -0.062
+4 OPC                   1      -0.037
+
+Mixed model (pseudobulk, patient as random effect):
+Type III Analysis of Variance Table with Satterthwaite's method
+               Sum Sq  Mean Sq NumDF DenDF F value    Pr(>F)    
+Neftel_state 0.003771 0.001257     3 8.091  17.059 0.0007402 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Cell-level mixed model (patient random effect):
+Type III Analysis of Variance Table with Satterthwaite's method
+             Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+Neftel_state 1.5279  0.5093     3 7943.1  106.71 < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+-- Region type --
+Pseudobulk mixed model:
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq    Mean Sq NumDF  DenDF F value Pr(>F)
+Region_Type 9.7387e-06 4.8694e-06     2 5.0247   0.281 0.7661
+Cell-level mixed model:
+Type III Analysis of Variance Table with Satterthwaite's method
+              Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+Region_Type 0.012378 0.006189     2 7945.3  1.2472 0.2874
+
+Paired patient-level Margin vs Core: n = 3 patients, median diff = -0.002, Wilcoxon p = 1
+
+-- Hypoxia decoupling (per-patient) --
+Per-patient Spearman rho (WEBS vs Hypoxia): median = -0.017, n = 6 patients, one-sample Wilcoxon p = 1
+Cell-level mixed model (Hypoxia ~ WEBS + (1|patient)):
+              Estimate Std. Error         df    t value     Pr(>|t|)
+(Intercept) 0.12352278 0.01086070    6.46932 11.3733709 1.626538e-05
+WEBS        0.01054565 0.01630398 7930.74471  0.6468146 5.177707e-01
+
+-- Pseudotime (per-patient) --
+pseudotime cols: pseudotime 
+Per-patient Spearman rho (WEBS vs pseudotime): median = 0.088, n = 6 patients, one-sample Wilcoxon p = 0.219
+Cell-level mixed model (WEBS ~ pseudotime + (1|patient)):
+                Estimate   Std. Error        df   t value     Pr(>|t|)
+(Intercept) -0.104113315 0.0192116911  18.26194 -5.419269 3.598717e-05
+get(ptcol)   0.002067178 0.0003900817 125.47398  5.299347 5.053298e-07

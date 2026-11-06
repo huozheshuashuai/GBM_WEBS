@@ -1,0 +1,18 @@
+
+=== GLASS primary tumors: n = 107 , events = 91 ===
+
+-- Six-gene signature (Cox, continuous) --
+          coef exp(coef) se(coef)        z     Pr(>|z|)
+risk 0.7601037  2.138498 0.159856 4.754927 1.985185e-06
+    variable         pval   method   pval.txt
+1 risk_group 4.236938e-05 Log-rank p < 0.0001
+
+-- WEBS (Cox, continuous) --
+           coef exp(coef)  se(coef)         z  Pr(>|z|)
+WEBS -0.4612386 0.6305022 0.1565269 -2.946704 0.0032118
+
+=== Longitudinal pairs (primary -> first recurrence): n = 179 ===
+WEBS primary mean = 0.1204  recurrence mean = 0.0669 
+Paired t-test p = 0.0753  Wilcoxon p = 0.091 
+Pairs with WEBS increase at recurrence: 79 / 179 
+Risk score: primary mean = -0.528  recurrence mean = -0.509  Wilcoxon p = 0.812 

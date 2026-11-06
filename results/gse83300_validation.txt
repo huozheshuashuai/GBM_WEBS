@@ -1,0 +1,11 @@
+=== GSE83300 external validation (n = 50 ) ===
+
+-- Six-gene signature --
+         coef exp(coef) se(coef)        z  Pr(>|z|)
+risk 1.016187  2.762641 3.026943 0.335714 0.7370866
+    variable    pval   method pval.txt
+1 risk_group 0.61165 Log-rank p = 0.61
+
+-- WEBS (bulk) --
+           coef exp(coef) se(coef)          z  Pr(>|z|)
+WEBS -0.8560948 0.4248179 2.900731 -0.2951307 0.7678941

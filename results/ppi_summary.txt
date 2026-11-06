@@ -1,0 +1,18 @@
+=== STRING PPI network ===
+Nodes: 121  Edges: 3349 
+Density: 0.4613 
+Global clustering: 0.75 
+Components: 1 
+
+Top 10 hubs by betweenness:
+         gene       class degree betweenness clustering
+SNW1     SNW1 Spliceosome     94    314.9261  0.6273164
+SRSF1   SRSF1 Spliceosome     89    171.7671  0.6578141
+CDC5L   CDC5L Spliceosome     86    170.8548  0.6889193
+U2AF2   U2AF2 Spliceosome     85    164.0548  0.6918768
+SNRPD1 SNRPD1 Spliceosome     91    143.9536  0.6483516
+SF3B1   SF3B1 Spliceosome     94    124.9083  0.6682681
+DDX39B DDX39B Spliceosome     83    123.3371  0.6705848
+SNRPF   SNRPF Spliceosome     94    104.6109  0.6472203
+HDAC1   HDAC1      Eraser     24    104.0109  0.5289855
+SNRPE   SNRPE Spliceosome     93    101.3090  0.6498364

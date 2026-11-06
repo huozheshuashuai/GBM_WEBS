@@ -1,0 +1,51 @@
+=== CPTAC phosphoproteome: LHS vs LLS ===
+Sites tested: 31010 
+Significant sites (FDR<0.05): 10445 
+Spliceosome sites tested: 319  significant: 198 
+Fisher spliceosome enrichment: OR = 3.26  p = 2.98e-25 
+
+Top spliceosome phosphosites (by |t|):
+                                           site     logFC        t    adj.P.Val
+SRSF10-S156sS158sS160s   SRSF10-S156sS158sS160s 0.6531234 8.780571 2.844329e-08
+SRSF9-S197sS199sS204s     SRSF9-S197sS199sS204s 1.1386250 7.790443 2.050853e-07
+RBM25-S583s                         RBM25-S583s 0.4472206 7.706970 2.272189e-07
+HNRNPC-S299s                       HNRNPC-S299s 0.7644657 7.651089 2.491037e-07
+SRSF10-S119sS121sS123s   SRSF10-S119sS121sS123s 0.7627595 7.388730 1.818661e-06
+PRPF38A-S193sS194s           PRPF38A-S193sS194s 0.6749580 7.359226 4.818521e-07
+SRSF10-S158sS160s             SRSF10-S158sS160s 0.6072272 7.218616 6.647154e-07
+THOC2-T1285t                       THOC2-T1285t 0.8670570 7.153226 1.056249e-06
+CWC22-S829s                         CWC22-S829s 0.5374691 7.144748 7.774248e-07
+RBM39-S97s                           RBM39-S97s 0.4677237 7.075466 9.190131e-07
+HNRNPC-S233s                       HNRNPC-S233s 0.5791590 7.029838 1.028684e-06
+PRPF40A-S856sS858sS861s PRPF40A-S856sS858sS861s 0.4963530 6.986887 1.090006e-06
+SRSF4-S78s                           SRSF4-S78s 0.7917776 6.841215 2.000696e-06
+TRA2B-S95sS97sS99s           TRA2B-S95sS97sS99s 0.6094328 6.823189 1.521423e-06
+TRA2B-S29sT33tS37s           TRA2B-S29sT33tS37s 1.4433186 6.808580 2.005404e-06
+
+SRSF family phosphosites: 71  significant: 45 
+                                         site     logFC    adj.P.Val
+SRSF10-S156sS158sS160s SRSF10-S156sS158sS160s 0.6531234 2.844329e-08
+SRSF9-S197sS199sS204s   SRSF9-S197sS199sS204s 1.1386250 2.050853e-07
+SRSF10-S158sS160s           SRSF10-S158sS160s 0.6072272 6.647154e-07
+SRSF10-S119sS121sS123s SRSF10-S119sS121sS123s 0.7627595 1.818661e-06
+SRSF4-S78s                         SRSF4-S78s 0.7917776 2.000696e-06
+SRSF4-S431s                       SRSF4-S431s 0.7961343 2.284416e-06
+SRSF9-S204s                       SRSF9-S204s 0.8583822 3.925525e-06
+SRSF10-S156sS158s           SRSF10-S156sS158s 0.6951438 6.895030e-06
+SRSF2-S26s                         SRSF2-S26s 0.4564276 9.060885e-06
+SRSF10-S253s                     SRSF10-S253s 0.4055674 1.150644e-05
+
+Kinase abundance vs WEBS (Spearman):
+  SRPK1   rho = +0.303  p = 0.0024
+  SRPK2   rho = +0.168  p = 0.0958
+  CLK1    rho = +0.355  p = 0.00818
+  CLK2    rho = +0.295  p = 0.0117
+  CLK3    rho = +0.487  p = 1.53e-06
+  CLK4    rho = +0.107  p = 0.342
+  CDK7    rho = +0.464  p = 1.8e-06
+  CDK9    rho = +0.562  p = 2.11e-09
+  CDK12   rho = +0.537  p = 1.66e-08
+  CDK13   rho = +0.546  p = 8.95e-09
+
+Spliceosome proteins with BOTH acetylation and phosphorylation data: 37 
+Crosstalk: per-protein |t| acetylation vs phosphorylation: rho = -0.051  p = 0.812  (n = 24 proteins)

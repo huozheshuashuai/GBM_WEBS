@@ -1,0 +1,5 @@
+=== Bulk splicing: immune-fraction correction ===
+WEBS vs TME score: rho = -0.305  p = 0.000125 
+WEBS-associated events: 4387 
+Retained after TME correction: 3987 (91%)
+Median |rho| before: 0.304  after: 0.293 

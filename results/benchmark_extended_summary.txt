@@ -1,0 +1,18 @@
+=== Extended benchmark ===
+
+scRNA (malignant cells, n=5000):
+    method   cor_MKI67 cor_pseudotime
+1     WEBS -0.10155434     0.30300095
+2   AUCell -0.08895745     0.28571060
+3   ssGSEA -0.05137810     0.11910576
+4    PLAGE  0.14032016    -0.33806801
+5 MeanExpr -0.08836494     0.18380298
+6   Zscore -0.06357422     0.09702734
+
+Bulk TCGA-GBM C-index:
+     method   C_index
+C      WEBS 0.4891044
+C1 MeanExpr 0.4891044
+C2   ssGSEA 0.5043456
+C3    PLAGE 0.5379771
+C4   Zscore 0.5272704

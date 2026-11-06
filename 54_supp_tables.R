@@ -1,0 +1,20 @@
+setwd("E:/KIMI/GBM_WEBS_Project")
+suppressMessages(library(openxlsx))
+wb <- loadWorkbook("submission/Supplementary/Supplementary_Tables.xlsx")
+
+add <- function(name, df) {
+  if (name %in% names(wb)) removeWorksheet(wb, name)
+  addWorksheet(wb, name)
+  writeData(wb, name, df)
+}
+add("S_pancancer33", read.csv("results/pancancer_33_summary.csv"))
+add("S_virtualKO", read.csv("results/virtual_ko_summary.csv"))
+add("S_glass_longitudinal", read.csv("results/glass_longitudinal_pairs.csv"))
+add("S_glass_primary", read.csv("results/glass_primary_scores.csv"))
+ph <- read.csv("results/phospho_limma_LHS_vs_LLS.csv")
+add("S_phospho_spliceosome", ph[ph$is_spliceosome == TRUE, ])
+sp <- read.csv("results/splicing_webs_corr.csv")
+add("S_splicing_top", sp[order(-abs(sp$rho)), ][1:500, ])
+add("S_splicing_enrichment", read.csv("results/splicing_enrichment.csv"))
+saveWorkbook(wb, "submission/Supplementary/Supplementary_Tables_v2.xlsx", overwrite = TRUE)
+cat("tables ok:", length(names(wb)), "sheets\n")

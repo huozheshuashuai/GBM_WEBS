@@ -1,0 +1,11 @@
+=== SNF multi-omics integration ===
+Optimal clusters: 3 
+
+Cluster x WEBS_group contingency:
+   
+    LDTS LHS LLS
+  1   22   5   9
+  2    8  17   2
+  3   19   3  14
+Chi-square p: 4.07e-06 
+KW WEBS ~ cluster p: 7.06e-07 

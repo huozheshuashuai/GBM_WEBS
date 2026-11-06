@@ -1,0 +1,8 @@
+=== Cross-cohort splicing replication (GBM -> LGG) ===
+
+GBM WEBS-associated events: 4387 
+Tested in LGG: 4285 
+Sign concordant: 3556 / 4285 (83%)
+Binomial test vs 50%: p = 0 
+Also significant in LGG (q<0.05): 2969 (69%), of which concordant: 2682/2969
+Effect-size correlation GBM vs LGG: rho = 0.699, p = 0
