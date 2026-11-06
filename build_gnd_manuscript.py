@@ -53,11 +53,11 @@ new_legends = """# Figure Legends
 
 **Figure 3. Protein-level spliceosome accumulation is associated with the writer-dominant state (CPTAC-GBM).** (a) Proteome differential abundance (high- vs low-WEBS); 107/111 spliceosome proteins up-regulated (purple). (b) Protein-level WEBS vs spliceosome protein score (ρ = 0.79, 95% CI 0.68–0.87). (c) Per-gene RNA- vs protein-layer correlation with WEBS (107/109 above diagonal). (d) Robustness across stratification thresholds (109–111/111 up-regulated).
 
-**Figure 4. Coordinated post-translational modification of the spliceosome.** (a) Top differential spliceosome acetylation sites, samples ordered by WEBS (enrichment OR = 7.36; abundance-corrected OR = 2.29). (b) Phosphosite volcano (LHS vs LLS); 198/319 spliceosome sites significant (corrected 124/319). (c) Splicing-kinase abundance vs WEBS. (d) Virtual knockout (GENIE3 GRN): predicted spliceosome shift per regulator.
+**Figure 4. Coordinated post-translational modification of the spliceosome.** (a) Top differential spliceosome acetylation sites, samples ordered by WEBS (enrichment OR = 7.36; abundance-corrected OR = 2.29). (b) Phosphosite volcano (LHS vs LLS); 198/319 spliceosome sites significant (corrected 124/319). (c) Splicing-kinase abundance vs WEBS. (d) GENIE3-based connectivity sensitivity analysis: relative absolute predicted shift of spliceosome vs other genes per regulator perturbation (dashed line = ratio 1; purple = writers, teal = erasers).
 
 **Figure 5. Altered alternative splicing output.** (a) 28,071 AS events vs bulk WEBS (TCGA-GBM); 4,387 significant. (b) Event-type composition. (c) GO enrichment (top: RNA splicing). (d) Cross-cohort replication in TCGA-LGG (83% sign-concordant; effect ρ = 0.70).
 
-**Figure 6. Clinical validation of the six-gene signature.** Kaplan–Meier curves: (a) TCGA-GBM (training, p = 0.0028), (b) CGGA-693 (p = 3.4 × 10⁻¹⁹), (c) CGGA-325 (p = 7.7 × 10⁻¹⁸), (d) GLASS primary tumors (HR = 2.14, p = 2.0 × 10⁻⁶).
+**Figure 6. Clinical validation of the six-gene signature.** Kaplan–Meier curves with number-at-risk tables: (a) TCGA-GBM (training), (b) CGGA-693, (c) CGGA-325, (d) GLASS primary tumors. In-panel p values are log-rank; subgroup HRs with 95% CI are from Cox models. Risk groups were defined by the cohort-specific median.
 
 **Figure 7. Longitudinal association and candidate vulnerabilities.** (a) Primary-tumor WEBS vs observed interval to first recurrence (GLASS, 213 pairs/173 patients; ρ = 0.33; exploratory). (b) WEBS in paired primary–recurrence samples. (c) Top WEBS-sensitizing compounds (GDSC2, q < 0.1). (d) DepMap dependency correlations for MED1, SF3B1, SRSF1, HDAC2, SIRT2.
 

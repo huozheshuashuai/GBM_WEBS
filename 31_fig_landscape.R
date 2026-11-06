@@ -25,7 +25,7 @@ obj$cc_label[!obj$cc_label %in% names(COL_CT)] <- NA
 pA <- DimPlot(obj, group.by = "cc_label", cols = COL_CT, label = TRUE, repel = TRUE) +
   ggtitle("A. Cell types") + theme(legend.position = "none")
 pB <- FeaturePlot(obj, features = "WEBS") +
-  scale_color_gradient2(low = "#2166AC", mid = "white", high = "#B2182B", midpoint = 0) +
+  scale_color_gradientn(colors = c("#313695", "#74ADD1", "#FEE090", "#F46D43", "#A50026")) +
   ggtitle("B. WEBS")
 pC <- VlnPlot(obj, features = "WEBS", group.by = "cc_label", cols = COL_CT, pt.size = 0) +
   ggtitle("C. WEBS by cell type") + theme(axis.text.x = element_text(angle = 45, hjust = 1),
