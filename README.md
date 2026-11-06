@@ -1,6 +1,6 @@
 # GBM WEBS Project - Reproducible Analysis Pipeline
 
-**Paper**: Post-transcriptional spliceosome accumulation marks a writer-dominant malignant cell state in glioblastoma
+**Paper**: A writer-dominant expression state is associated with post-transcriptional spliceosome accumulation in glioblastoma
 
 **Authors**: Jia Chen, Junhan Yang, Bing Yang, Tianyi Zhou, Peijun Zhao
 

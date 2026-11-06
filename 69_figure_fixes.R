@@ -226,15 +226,18 @@ p7c <- ggplot(top_drugs, aes(DRUG_NAME, spearman_r)) +
 dd <- read.csv("results/depmap_webs_dependency.csv")
 dd$gene <- dd[[1]]
 key <- dd[dd$gene %in% c("MED1","SF3B1","SRSF1","HDAC2","SIRT2"), ]
-key$sig <- ifelse(key$q < 0.05, "FDR q < 0.05", "nominal p < 0.05")
+key$sig <- ifelse(key$q < 0.05, "FDR q < 0.05",
+                  ifelse(key$p < 0.05, "nominal p < 0.05", "n.s."))
 key$gene <- factor(key$gene, levels = key$gene[order(key$spearman_r)])
 p7d <- ggplot(key, aes(gene, spearman_r, fill = sig)) +
   geom_bar(stat = "identity") + coord_flip() +
   geom_hline(yintercept = 0, linetype = "dashed") +
-  scale_fill_manual(values = c("FDR q < 0.05" = PURPLE, "nominal p < 0.05" = "grey60"), name = NULL) +
+  scale_fill_manual(values = c("FDR q < 0.05" = PURPLE, "nominal p < 0.05" = "#D4A017",
+                               "n.s." = "grey65"), name = NULL) +
   theme_bw(base_size = 10) + theme(legend.position = "bottom") +
   labs(x = NULL, y = "Correlation with dependency (Chronos)",
-       title = "DepMap dependency (glioma lines)")
+       title = "DepMap dependency (glioma lines)",
+       subtitle = "Negative = stronger dependency in high-WEBS lines")
 
 fig7 <- (p7a | p7b) / (p7c | p7d) + plot_annotation(tag_levels = "a")
 ggsave("figures_GND/Figure_7.pdf", fig7, width = 12, height = 10)

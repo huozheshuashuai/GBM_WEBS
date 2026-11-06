@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-**Manuscript**: Post-transcriptional spliceosome accumulation marks a writer-dominant malignant cell state in glioblastoma
+**Manuscript**: A writer-dominant expression state is associated with post-transcriptional spliceosome accumulation in glioblastoma
 
 This document describes all supplementary figures and tables.
 
@@ -38,7 +38,7 @@ This document describes all supplementary figures and tables.
 
 **Figure S14 | GLASS longitudinal WEBS.** WEBS in paired primary and first-recurrence glioma samples (n = 179 pairs; paired Wilcoxon p = 0.09): no systematic change at recurrence.
 
-**Figure S15 | Meta-analysis of the six-gene signature.** Random-effects meta-analysis across TCGA-GBM, CGGA-693, and CGGA-325 (primary pooled HR = 1.35, p = 0.0028; I² = 91.4%). The common-effect estimate (HR = 1.23) is shown as a sensitivity analysis.
+**Figure S15 | Meta-analysis of the six-gene signature.** Random-effects meta-analysis across TCGA-GBM, CGGA-693, and CGGA-325 (primary pooled HR = 1.35, 95% CI 1.12-1.63, p = 0.0028; I² = 91.4%, Q p = 8.5e-06; per-cohort HRs: TCGA 1.61, CGGA-693 1.14, CGGA-325 1.42, weights 26.7%, 37.6%, 35.8%). The common-effect estimate (HR = 1.23) is shown as a sensitivity analysis.
 
 **Figure S16 | Similarity network fusion (SNF).** Consensus clustering across CPTAC proteome, acetylome, and transcriptome; clusters recapitulate WEBS stratification (Kruskal–Wallis p = 7.1 × 10⁻⁷).
 

@@ -54,7 +54,7 @@ chk("S_splicing_sig4387 exists", "S_splicing_sig4387" in names)
 
 # 10. supp front title
 supp = open("submission_GND/supplementary_materials.md", encoding="utf-8").read()
-chk("Supp front-page new title", "marks a writer-dominant" in supp)
+chk("Supp front-page new title", "writer-dominant expression state" in supp)
 chk("S24-S33 legends present", "Figure S33" in supp and "Figure S24" in supp)
 
 ok = sum(1 for _, c, _ in checks if c)
