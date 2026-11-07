@@ -12,11 +12,11 @@ suppressMessages({
 set.seed(42)
 dir.create("figures_v2", showWarnings = FALSE)
 
-# writer/eraser TSS coordinates (GSE138794 ATAC is hg19/GRCh37 -> EnsDb v75)
-suppressMessages(library(EnsDb.Hsapiens.v75))
+# writer/eraser TSS coordinates (GSE138794 ATAC peaks are GRCh38 -> EnsDb v86; verified by TSS-overlap test)
+suppressMessages(library(EnsDb.Hsapiens.v86))
 GENES <- c("EP300","KAT2A","KAT2B","KAT5","KAT8","CREBBP",
            "HDAC1","HDAC2","HDAC3","SIRT1","SIRT2","SIRT3","SIRT6","SIRT7")
-gn <- genes(EnsDb.Hsapiens.v75, filter = GeneNameFilter(GENES))
+gn <- genes(EnsDb.Hsapiens.v86, filter = GeneNameFilter(GENES))
 tss <- data.frame(gene = gn$gene_name, seqnames = as.character(seqnames(gn)),
                   tss = ifelse(strand(gn) == "+", start(gn), end(gn)))
 
