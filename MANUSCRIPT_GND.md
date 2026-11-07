@@ -210,7 +210,7 @@ A writer-dominant expression state in glioblastoma is associated with broad spli
 
 # Ethics approval and consent to participate
 
-This study involved secondary analyses of publicly available, de-identified datasets and did not involve prospective recruitment or collection of identifiable human data. All datasets were accessed and analyzed in accordance with their respective data-use agreements (including CGGA registration and the GLASS consortium terms via Synapse). Institutional ethics review or exemption status was determined in accordance with the policies of the authors' institution.
+Not applicable. This study involved only secondary analyses of publicly available, de-identified datasets (TCGA, CPTAC, CGGA, GEO, GLASS, DepMap, GDSC2, TCGASpliceSeq). No new human participants, tissue samples, or identifiable data were collected. All datasets were accessed and analyzed in accordance with their respective data-use agreements.
 
 # Funding
 
