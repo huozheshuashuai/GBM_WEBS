@@ -38,7 +38,7 @@ chk("maxRank=1500 = 7.5% universe", "7.5% of the ~20,000-gene universe" in ms)
 chk("Bootstrap 1,000 in text", "1,000 iterations" in ms)
 
 # 7. GLASS units
-chk("GLASS 213 pairs/173 patients in text", "213 pairs from 173 independent patients" in ms or "213 pairs/173" in ms)
+chk("GLASS 213 pairs/173 patients in text", "213 recurrence-interval records from 173 patients" in ms)
 chk("179 pairs/148 patients in text", "179 pairs from 148 patients" in ms)
 
 # 8. 107/111 vs 110/111
