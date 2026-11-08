@@ -25,9 +25,11 @@ if (!"is_spliceosome" %in% colnames(lim)) {
 lim$cat <- ifelse(lim$is_spliceosome & lim$adj.P.Val < 0.05 & lim$logFC > 0, "Spliceosome up",
            ifelse(lim$is_spliceosome, "Spliceosome", "Other"))
 lim <- lim[order(lim$cat != "Spliceosome up"), ]
-lim$sz <- ifelse(lim$cat == "Spliceosome up", 1.8, 0.4)
+lim$sz <- ifelse(lim$cat == "Spliceosome up", 2.0, 0.4)
+lim$shp <- ifelse(lim$cat == "Spliceosome up", 17, 16)
 p3a <- ggplot(lim, aes(logFC, -log10(P.Value))) +
-  geom_point(aes(color = cat, size = sz), alpha = 0.6) +
+  geom_point(aes(color = cat, size = sz, shape = shp), alpha = 0.65) +
+  scale_shape_identity() +
   scale_size_identity() +
   scale_color_manual(values = c("Spliceosome up" = PURPLE, "Spliceosome" = TEAL, "Other" = "grey85")) +
   theme_bw(base_size = 10) + theme(legend.position = "none") +

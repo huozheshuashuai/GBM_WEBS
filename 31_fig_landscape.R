@@ -31,7 +31,9 @@ pB <- FeaturePlot(obj, features = "WEBS") +
 pC <- VlnPlot(obj, features = "WEBS", group.by = "cc_label", cols = COL_CT, pt.size = 0) +
   ggtitle("C. WEBS by cell type") + theme(axis.text.x = element_text(angle = 45, hjust = 1),
                                           legend.position = "none")
-pD <- DimPlot(obj, group.by = "WEBS_group", cols = COL_WEBS) +
+pD <- DimPlot(obj, group.by = "WEBS_group", cols = COL_WEBS,
+               shape.by = "WEBS_group") +
+  scale_shape_manual(values = c("LLS" = 16, "LDTS" = 17, "LHS" = 15), name = "WEBS group") +
   ggtitle("D. WEBS groups (IQR)")
 pdf("figures_v2/Fig2_WEBS_landscape.pdf", width = 13, height = 11)
 print((pA | pB) / (pC | pD))

@@ -51,9 +51,11 @@ ph$cat <- ifelse(ph$adj.P.Val < 0.05 & ph$is_spliceosome & ph$logFC > 0, "Splice
           ifelse(ph$adj.P.Val < 0.05, "Other sig",
           ifelse(ph$is_spliceosome, "Spliceosome NS", "NS"))))
 ph <- ph[order(!grepl("Spliceosome sig", ph$cat)), ]
-ph$sz <- ifelse(grepl("Spliceosome sig", ph$cat), 1.6, 0.4)
+ph$sz <- ifelse(grepl("Spliceosome sig", ph$cat), 1.8, 0.4)
+ph$shp <- ifelse(grepl("Spliceosome sig", ph$cat), 17, 16)
 p4b <- ggplot(ph, aes(logFC, -log10(P.Value))) +
-  geom_point(aes(color = cat, size = sz), alpha = 0.55) +
+  geom_point(aes(color = cat, size = sz, shape = shp), alpha = 0.55) +
+  scale_shape_identity() +
   scale_size_identity() +
   scale_color_manual(values = c("Spliceosome sig (up)" = PURPLE, "Spliceosome sig (down)" = "#1b9e77",
                                 "Other sig" = "grey80", "Spliceosome NS" = TEAL, "NS" = "grey92"),
@@ -158,6 +160,7 @@ km_plot2 <- function(risk, time, event, title) {
   hr <- round(cox$conf.int[1, 1], 2); lo <- round(cox$conf.int[1, 3], 2); hi <- round(cox$conf.int[1, 4], 2)
   nlo <- sum(d$grp == "Low"); nhi <- sum(d$grp == "High")
   ggsurvplot(fit, data = d, pval = TRUE, pval.method = TRUE,
+             linetype = "strata",
              legend.labs = c(paste0("Low (n=", nlo, ")"), paste0("High (n=", nhi, ")")),
              palette = c(BLUE, RED), legend = "top",
              title = title, subtitle = paste0("HR = ", hr, " (95% CI ", lo, "-", hi, ")"),
@@ -231,6 +234,8 @@ key$sig <- ifelse(key$q < 0.05, "FDR q < 0.05",
 key$gene <- factor(key$gene, levels = key$gene[order(key$spearman_r)])
 p7d <- ggplot(key, aes(gene, spearman_r, fill = sig)) +
   geom_bar(stat = "identity") + coord_flip() +
+  geom_text(aes(label = ifelse(sig == "n.s.", "n.s.", ifelse(sig == "nominal p < 0.05", "nom.", "FDR")),
+                hjust = ifelse(spearman_r < 0, 1.15, -0.15)), size = 2.6) +
   geom_hline(yintercept = 0, linetype = "dashed") +
   scale_fill_manual(values = c("FDR q < 0.05" = PURPLE, "nominal p < 0.05" = "#D4A017",
                                "n.s." = "grey65"), name = NULL) +
