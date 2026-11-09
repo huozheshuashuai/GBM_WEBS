@@ -1,0 +1,8 @@
+setwd("E:/KIMI/GBM_WEBS_Project")
+suppressMessages(library(openxlsx))
+wb <- loadWorkbook("submission_GND/04_Supplementary/Supplementary_Tables_GND.xlsx")
+if ("S_immune_xcell" %in% names(wb)) removeWorksheet(wb, "S_immune_xcell")
+addWorksheet(wb, "S_immune_xcell")
+writeData(wb, "S_immune_xcell", read.csv("results/immune_infiltration_xcell.csv"))
+saveWorkbook(wb, "submission_GND/04_Supplementary/Supplementary_Tables_GND.xlsx", overwrite = TRUE)
+cat("sheets:", length(names(wb)), "\n")

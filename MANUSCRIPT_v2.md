@@ -165,7 +165,7 @@ WEBS correlated with increased dependency on MED1 (r = −0.28, q = 0.049, borde
 
 ## 3.11 Cell–cell communication
 
-CellChat [17] comparison identified SPP1–CD44 as up-regulated in the writer-dominant state, while the MIF–CD74/CXCR4 axis [23] — both ligand and receptors — was enriched in LLS (permutation p < 10⁻⁴; Fig. 6), suggesting differences in inferred immune–tumor communication between the low- and high-WEBS compartments.
+CellChat [17] comparison identified SPP1–CD44 as up-regulated in the writer-dominant state, while the MIF–CD74/CXCR4 axis [23] — both ligand and receptors — was enriched in LLS (permutation p < 10⁻⁴; Fig. 6), suggesting differences in inferred immune–tumor communication between the low- and high-WEBS compartments. xCell deconvolution of bulk tumors supported this pattern at the compositional level: macrophage (M1/M2), monocyte, and overall immune/microenvironment scores were significantly higher in LLS than LHS in both TCGA-GBM (23 cell types, FDR < 0.05) and CPTAC-GBM (12 cell types), with cross-cohort concordance ρ = 0.68 (Fig. S34), consistent with a myeloid-enriched microenvironment in the low-WEBS compartment.
 
 ## 3.12 Method benchmarking and computational performance
 
