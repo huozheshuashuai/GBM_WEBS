@@ -1,6 +1,0 @@
-=== GLASS recurrence: first-pair-per-patient sensitivity ===
-
-Full: n = 213 pairs, 173 patients
-Full:        rho = 0.327, p = 1.1e-06
-First-pair:  n = 173 patients, rho = 0.313, p = 2.81e-05
-First-pair median interval: low-WEBS 9 mo vs high-WEBS 16 mo, Wilcoxon p = 1.05e-05

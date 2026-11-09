@@ -1,6 +1,0 @@
-=== Threshold sensitivity: spliceosome up/down in high vs low WEBS ===
-
-bottom/top 20%     n_low=20 n_high=20  spliceosome up: 110/111 (FDR<0.05: 109)  down: 1
-bottom/top 25%     n_low=25 n_high=25  spliceosome up: 110/111 (FDR<0.05: 108)  down: 1
-bottom/top 30%     n_low=30 n_high=30  spliceosome up: 111/111 (FDR<0.05: 107)  down: 0
-median split       n_low=50 n_high=49  spliceosome up: 109/111 (FDR<0.05: 103)  down: 2

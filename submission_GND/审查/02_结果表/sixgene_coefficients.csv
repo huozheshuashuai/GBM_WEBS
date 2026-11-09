@@ -1,7 +1,0 @@
-"gene","coefficient_fixed","direction","cox_refit_TCGA","note"
-"HIF1A",-0.284,"protective",-0.363,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."
-"SIRT2",-0.176,"protective",-0.298,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."
-"MMP2",0.262,"risk",0.219,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."
-"ITGA5",0.23,"risk",0.209,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."
-"HDAC1",-0.22,"protective",-0.472,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."
-"SPP1",0.146,"risk",0.106,"Fixed coefficients used for ALL cohorts; no re-fitting in validation cohorts. Refit shown for reference only (risk-score correlation r = 0.95)."

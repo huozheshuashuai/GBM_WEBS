@@ -19,3 +19,8 @@ results/cellchat_objects.rds
 /[0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*/
 results_snapshot_round1/
 *.tar.gz
+
+# submission packages (contain large binaries and GLASS-derived tables; kept locally)
+submission/
+submission_GND/
+submission_BJC/
