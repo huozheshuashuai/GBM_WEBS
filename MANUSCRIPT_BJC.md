@@ -11,7 +11,7 @@
 ⁴ Chongqing University, Chongqing, China
 
 # These authors contributed equally to this work.
-\* Corresponding author: Jia Chen, Department of Bioinformatics, Chengdu Neusoft University, Chengdu, China. Email: 1176625889@qq.com. ORCID: [TO BE ADDED BY AUTHOR]
+\* Corresponding author: Jia Chen, Department of Bioinformatics, Chengdu Neusoft University, Chengdu, China. Email: 1176625889@qq.com. ORCID: 0009-0002-0082-3050
 
 **Running title**: Spliceosome accumulation in GBM
 
