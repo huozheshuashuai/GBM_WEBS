@@ -1,0 +1,12 @@
+=== Direct RNA-protein residual test (CPTAC, n = 99 patients) ===
+
+Per-protein model (protein ~ mRNA + WEBS):
+  spliceosome proteins with WEBS beta > 0, FDR<0.05: 103 / 109 
+  genome-wide: 2600 / 10748 
+  Fisher enrichment of positive WEBS-beta in spliceosome: OR = 55.92  p = 3e-56 
+
+Model B (complex residual score):
+  Spliceosome residual score vs WEBS: rho = 0.783  p = 0 
+  ANOVA by group p = 2.1e-18  KW p = 1.89e-13 
+  LHS-LLS residual delta: positive in 105 / 109 proteins
+  Expression-matched random sets (2,000): empirical p = 5e-04 

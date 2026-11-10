@@ -1,0 +1,7 @@
+=== Splicing confounder control (n = 153 samples) ===
+
+Covariates: immune, proliferation, MES, proneural, hypoxia
+
+WEBS-associated events: 4387 
+Retained after immune adjustment: 4297 (98%)
+Retained after ALL five covariates: 4243 (97%)

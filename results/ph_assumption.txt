@@ -1,0 +1,6 @@
+=== Proportional-hazards assumption (cox.zph) ===
+
+TCGA-GBM: global p = 0.681594 
+CGGA-693: global p = 0.01979444 
+CGGA-325: global p = 0.003599924 
+GLASS: global p = 0.2016566 
