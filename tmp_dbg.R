@@ -1,0 +1,6 @@
+webs <- read.csv("results/cptac_webs.csv")
+prot <- read.delim("data/raw/CPTAC/HS_CPTAC_GBM_proteome_mssm_per_gene.cct", check.names = FALSE, nrows = 3)
+rna <- read.delim("data/raw/CPTAC/HS_CPTAC_GBM_rnaseq_fpkm_uq_log2.cct", check.names = FALSE, nrows = 3)
+cat("webs:", head(webs$sample, 3), "\n")
+cat("prot cols:", head(colnames(prot)[-1], 3), "\n")
+cat("rna cols:", head(colnames(rna)[-1], 3), "\n")
