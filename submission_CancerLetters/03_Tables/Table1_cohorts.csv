@@ -1,7 +1,0 @@
-"Cohort","Type","N","Platform","Role"
-"KNCC (discovery)","Longitudinal proteome+phosphoproteome","105 proteome pairs; 89 phospho pairs","TMT11","Discovery"
-"HHS (validation)","Longitudinal proteome (FFPE, LFQ)","40 pairs","LFQ iBAQ (imputed)","Independent longitudinal validation"
-"CPTAC-GBM","Cross-sectional proteome/PTM/RNA","99 tumors","TMT/MS","Cross-sectional concordance"
-"GeoMx GSE254875","Spatial WTA (79 ROIs)","11 patients","GeoMx WTA","Spatial localization"
-"GLASS","Longitudinal RNA-seq","221 pairs","RNA-seq TPM","Transcript-level boundary"
-"GSE155434","Longitudinal RNA-seq","11 pairs","RNA-seq","Transcript-level support"
